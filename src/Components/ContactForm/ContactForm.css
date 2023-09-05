@@ -13,14 +13,23 @@
 
 .contact-form input {
     display: block;
-    width: 70.5%;
+    width: 40%;
+    background-color: #1F3845;
+    border: 1px solid #ACDBF2;
+}
+
+#question-input {
+    display: block;
+    width: 40%;
+    background-color: #1F3845;
+    border: 1px solid #ACDBF2;
 }
 
 .contact-button {
     margin-top: 0.5em;
-    background-color: white;
-    border: 1px solid black;
-    color: black;
+    background: #122129;
+    color: #FFFCAD;
+    border: 1px solid #ACDBF2;
     font-weight: bold;
     padding: 0.5em 1em;
     width: 80%;
