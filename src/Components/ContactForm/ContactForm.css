@@ -3,7 +3,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .contact-form > label {
@@ -39,6 +38,6 @@
 button:hover, 
 button:focus {
   cursor: pointer;
-  background: lightpink;
-  transition: ease-in-out .5s;
+  background: #66262C;
+  transition: ease-in-out 0.3s;
 }
