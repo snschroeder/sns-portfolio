@@ -3,8 +3,8 @@ body {
   font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #122129;
-  color: #FFFCAD;
+  /* background: #122129;
+  color: #FFFCAD; */
   font-size: 1.2em;
 }
 
@@ -15,5 +15,5 @@ code {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Andika', sans-serif;
-  color: #B0DFF7;
+  /* color: #B0DFF7; */
 }

@@ -4,12 +4,15 @@ import './ParticleCanvas.css';
 interface ParticleInterface {
   x: number,
   y: number,
-  size: number,
+  radius: number,
   trajectory: number,
   speed: number,
+  veloX: number,
+  veloY: number,
   t: number,
   strokeColor: string,
   particleTrailWidth: number,
+  draw: () => void,
   floatAround: () => void,
 }
 
@@ -28,31 +31,51 @@ const ParticleCanvas: React.FC = () => {
     setWindowY(innerHeight);
   };
 
-  function Particle(this: ParticleInterface, ctx: any, startX: number, startY: number, size: number) {
+  function Particle(this: ParticleInterface, ctx: any, startX: number, startY: number, radius: number, veloX: number, veloY: number) {
     this.x = startX;
     this.y = startY;
-    this.speed = 0.02;
-    this.trajectory = Math.random() * Math.PI * 2;
-    this.t = Math.random() * 150;
+    this.speed = 0.1;
+    this.veloX = veloX;
+    this.veloY = veloY;
+
     this.strokeColor = 'rgba(200, 200, 0, 1)';
-    this.particleTrailWidth = size;
+    this.radius = radius;
+    ctx.fillStyle = this.strokeColor;
+
+    this.draw = () => {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
+      ctx.closePath();
+      ctx.fill();
+    };
 
     this.floatAround = () => {
       const ls = {
         x: this.x,
         y: this.y,
       };
-      this.trajectory += this.speed;
-      this.x = Math.cos(this.trajectory) * this.t;
-      this.y = Math.sin(this.trajectory) * this.t;
-      ctx.beginPath();
-      ctx.lineWidth = this.particleTrailWidth;
-      ctx.strokeStyle = this.strokeColor;
-      ctx.moveTo(ls.x, ls.y);
-      ctx.lineTo(this.x, this.y);
-      ctx.stroke();
+
+      ctx.clearRect(0, 0, windowX, windowY);
+      this.draw();
+      this.x += this.veloX;
+      this.y += this.veloY;
+
+
+      // this.trajectory += this.speed;
+      //   this.x += Math.cos(this.speed) * this.t;
+      //   this.y += Math.sin(this.speed) * this.t;
+      //   ctx.beginPath();
+
+      //   ctx.strokeStyle = this.strokeColor;
+      //   ctx.moveTo(ls.x, ls.y);
+      //   ctx.lineTo(this.x, this.y);
+      //   ctx.stroke();
     };
   }
+
+  const getRandomInt = (max: number): number => {
+    return Math.floor(Math.random() * max);
+  };
 
   const generateParticleField = (amount: number): void => {
     const ctx = canvasRef.current.getContext('2d');
@@ -60,18 +83,20 @@ const ParticleCanvas: React.FC = () => {
     ctx.fillRect(0, 0, windowX, windowY);
 
     for (let i = 0; i < amount; i += 1) {
-      particleArray[i] = new (Particle as any)(ctx, 300, 300, 10);
+      particleArray[i] = new (Particle as any)(ctx, getRandomInt(200), getRandomInt(200), getRandomInt(40), 0.2, 0.5);
     }
+
+    particleArray.forEach((particle: ParticleInterface) => particle.draw());
   };
 
   const animate = () => {
     requestAnimationFrame(animate);
-    particleArray.forEach((particle) => particle.floatAround());
+    particleArray.forEach((particle: ParticleInterface) => particle.floatAround());
   };
 
   useEffect(() => {
     addEventListener('resize', () => setSize());
-    generateParticleField(10);
+    generateParticleField(1);
     animate();
   }, []);
  
