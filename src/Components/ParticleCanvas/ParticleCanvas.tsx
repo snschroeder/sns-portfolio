@@ -15,18 +15,32 @@ const ParticleCanvas: React.FC = () => {
     setWindowY(innerHeight);
   };
 
+  // Get a random integer between 0 and max, exclusive
   const getRandomInt = (max: number): number => {
     return Math.floor(Math.random() * max);
   };
 
+  // Get a random integer between min and max
+  // min is inclusive
+  // max is exclusive
   const getRandomIntWithinRange = (min: number, max: number): number => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
   };
 
+  // Get a random decimal between min and max
+  // min is inclusive
+  // max is exclusive
   const getRandomDecimalWithinRange = (min: number, max: number): number => {
-    return Math.floor(Math.random() * (max - min) + min);    
+    return Math.random() * (max - min) + min;    
+  };
+
+  // Make a number either positive or negative
+  const applySign = (val: number): number => {
+    const direction = getRandomInt(2);
+
+    return direction === 0 ? val : -val;
   };
 
   const generateParticleField = (amount: number) => {
@@ -41,8 +55,8 @@ const ParticleCanvas: React.FC = () => {
         getRandomInt(windowX),
         getRandomInt(windowY),
         getRandomIntWithinRange(10, 40),
-        getRandomDecimalWithinRange(-0.5, 0.5),
-        getRandomDecimalWithinRange(-0.5, 0.5),
+        applySign(getRandomDecimalWithinRange(0.05, 0.3)),
+        applySign(getRandomDecimalWithinRange(0.05, 0.3)),
         ctx,
       );
     }
