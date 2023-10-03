@@ -33,12 +33,6 @@ const ParticleCanvas: React.FC = () => {
     setParticleArray([...particles]);
   };
 
-  const drawParticleField = (): void => {
-    console.log(particleArray);
-
-    particleArray.forEach((particle: Particle) => particle.draw());
-  };
-
   const animate = () => {
     const ctx = canvasRef.current.getContext('2d');
 
@@ -56,7 +50,6 @@ const ParticleCanvas: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    drawParticleField();
     animate();
   }, [particleArray]);
 

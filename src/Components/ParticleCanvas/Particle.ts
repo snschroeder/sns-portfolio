@@ -24,7 +24,7 @@ class Particle {
     this.ctx = ctx;
   }
 
-  draw(): void {
+  private draw(): void {
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
     this.ctx.closePath();
@@ -32,7 +32,6 @@ class Particle {
   }
 
   floatAround(): void {
-    // this.ctx.clearRect(0, 0, this.windowX, this.windowY);
     this.draw();
     this.x += this.veloX;
     this.y += this.veloY;
