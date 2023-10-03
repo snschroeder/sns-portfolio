@@ -19,6 +19,16 @@ const ParticleCanvas: React.FC = () => {
     return Math.floor(Math.random() * max);
   };
 
+  const getRandomIntWithinRange = (min: number, max: number): number => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  };
+
+  const getRandomDecimalWithinRange = (min: number, max: number): number => {
+    return Math.floor(Math.random() * (max - min) + min);    
+  };
+
   const generateParticleField = (amount: number) => {
     const ctx = canvasRef.current.getContext('2d');
     ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
@@ -27,7 +37,14 @@ const ParticleCanvas: React.FC = () => {
     let particles = new Array<Particle>(amount);
 
     for (let i = 0; i < amount; i += 1) {
-      particles[i] = new Particle(getRandomInt(200), getRandomInt(200), getRandomInt(40), 0.2, 0.5, ctx);
+      particles[i] = new Particle(
+        getRandomInt(windowX),
+        getRandomInt(windowY),
+        getRandomIntWithinRange(10, 40),
+        getRandomDecimalWithinRange(-0.5, 0.5),
+        getRandomDecimalWithinRange(-0.5, 0.5),
+        ctx,
+      );
     }
 
     setParticleArray([...particles]);
