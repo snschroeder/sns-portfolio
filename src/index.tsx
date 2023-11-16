@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import App from './Components/App/App';
+import Gallery from './Components/Gallery/Gallery';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 
 
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     errorElement: <PageNotFound />,
+  },
+  {
+    path: 'gallery',
+    element: <Gallery />,
   },
 ]);
 
