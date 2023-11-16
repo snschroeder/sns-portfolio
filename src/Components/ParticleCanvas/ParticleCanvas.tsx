@@ -45,7 +45,7 @@ const ParticleCanvas: React.FC = () => {
 
   const generateParticleField = (amount: number) => {
     const ctx = canvasRef.current.getContext('2d');
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
+    ctx.fillStyle = 'rgba(223, 207, 137, 0.3)';
     ctx.fillRect(0, 0, windowX, windowY);
 
     let particles = new Array<Particle>(amount);
@@ -54,9 +54,9 @@ const ParticleCanvas: React.FC = () => {
       particles[i] = new Particle(
         getRandomInt(windowX),
         getRandomInt(windowY),
-        getRandomIntWithinRange(10, 40),
-        applySign(getRandomDecimalWithinRange(0.05, 0.3)),
-        applySign(getRandomDecimalWithinRange(0.05, 0.3)),
+        getRandomIntWithinRange(5, 15),
+        applySign(getRandomDecimalWithinRange(0.005, 0.1)),
+        applySign(getRandomDecimalWithinRange(0.005, 0.1)),
         ctx,
       );
     }
@@ -77,7 +77,7 @@ const ParticleCanvas: React.FC = () => {
 
   useEffect(() => {
     addEventListener('resize', () => setSize());
-    generateParticleField(20);
+    generateParticleField(50);
   }, []);
 
   useEffect(() => {

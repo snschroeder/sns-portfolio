@@ -31,6 +31,10 @@ class Particle {
     this.ctx.fill();
   }
 
+  private addMouseListener() {
+    document.addEventListener('mousemove', this.scatterParticle);
+  }
+
   public floatAround(): void {
     this.draw();
 
@@ -45,6 +49,20 @@ class Particle {
 
     this.x += this.veloX;
     this.y += this.veloY;
+  }
+
+  public scatterParticle(event: any): void {
+    this.addMouseListener();
+    let moveX = event.movementX;
+    let moveY = event.movementY;
+    console.log(moveX);
+    console.log(moveY);
+    // detect mouse movement
+    // do we need to detect over some short timeframe? 
+    // for instance, move mouse from left to right, we scatter right
+    // do we need to determine proximity? Only scatter within say 50 pixels
+    // Will the event listener need to be canvas level?
+    // by that I mean, will assigning an event listener to each particle be an issue?
   }
 }
 
