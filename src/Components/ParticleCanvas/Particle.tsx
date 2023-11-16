@@ -31,10 +31,6 @@ class Particle {
     this.ctx.fill();
   }
 
-  private addMouseListener() {
-    document.addEventListener('mousemove', this.scatterParticle);
-  }
-
   public floatAround(): void {
     this.draw();
 
@@ -52,7 +48,6 @@ class Particle {
   }
 
   public scatterParticle(event: any): void {
-    this.addMouseListener();
     let moveX = event.movementX;
     let moveY = event.movementY;
     console.log(moveX);

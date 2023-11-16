@@ -36,7 +36,7 @@ const ParticleCanvas: React.FC = () => {
     return Math.random() * (max - min) + min;    
   };
 
-  // Make a number either positive or negative
+  // Randomly make a number either positive or negative
   const applySign = (val: number): number => {
     const direction = getRandomInt(2);
 
@@ -45,7 +45,7 @@ const ParticleCanvas: React.FC = () => {
 
   const generateParticleField = (amount: number) => {
     const ctx = canvasRef.current.getContext('2d');
-    ctx.fillStyle = 'rgba(223, 207, 137, 0.3)';
+    ctx.fillStyle = 'rgba(223, 207, 137, 0.4)';
     ctx.fillRect(0, 0, windowX, windowY);
 
     let particles = new Array<Particle>(amount);
