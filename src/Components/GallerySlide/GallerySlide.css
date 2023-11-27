@@ -1,0 +1,17 @@
+.gallery-slide {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(128, 255, 212, 1);
+    width: 100%;
+    height: 33vh;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.slide-image {
+    margin: 1em;
+}
+
+.slide-details {
+    margin: 1em;
+}
