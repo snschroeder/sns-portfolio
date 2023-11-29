@@ -10,12 +10,6 @@ const ParticleCanvas: React.FC = () => {
   const canvasRef: React.Ref<any> = useRef();
   let animationFrame;
 
-  // TODO: add debounce to resizing
-  const setSize = (): void => {
-    setWindowX(innerWidth);
-    setWindowY(innerHeight);
-  };
-
   // Get a random integer between 0 and max, exclusive
   const getRandomInt = (max: number): number => {
     return Math.floor(Math.random() * max);
@@ -48,7 +42,6 @@ const ParticleCanvas: React.FC = () => {
     const ctx = canvasRef.current.getContext('2d');
     ctx.fillStyle = 'rgba(223, 207, 137, 0.4)';
     ctx.fillRect(0, 0, windowX, windowY);
-
     let particles = new Array<Particle>(amount);
 
     for (let i = 0; i < amount; i += 1) {
@@ -64,6 +57,23 @@ const ParticleCanvas: React.FC = () => {
 
     setParticleArray([...particles]);
   };
+
+  const setSize = (): void => {
+    if (Math.abs(innerWidth - windowX) > 50) {
+      setWindowX(innerWidth);
+      setParticleArray([]);
+    }
+  
+    if (Math.abs(innerHeight - windowY) > 50) {
+      setWindowY(innerHeight);
+      setParticleArray([]);
+    }
+
+    if (particleArray.length === 0) {
+      generateParticleField(50);
+    }
+  };
+  
 
   const animate = () => {
     const ctx = canvasRef.current.getContext('2d');

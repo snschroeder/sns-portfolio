@@ -24,6 +24,18 @@ class Particle {
     this.ctx = ctx;
   }
 
+  public setWindowX(updatedWindowX: number): void {
+    this.windowX = updatedWindowX;
+  }
+
+  public setWindowY(updatedWindowY: number): void {
+    this.windowY = updatedWindowY;
+  }
+
+  public setCtx(updatedCtx: any): void {
+    this.ctx = updatedCtx;
+  }
+ 
   private draw(): void {
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
