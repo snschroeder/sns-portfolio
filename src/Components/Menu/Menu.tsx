@@ -1,14 +1,11 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
-
-import ParticleCanvas from '../ParticleCanvas/ParticleCanvas';
+import { Link } from 'react-router-dom';
 
 import './Menu.css';
 
 const Menu: React.FC = () => {
   return (
     <section className="menu-container">
-        <ParticleCanvas />
         <nav className="menu">
           <ul className="menu-list">
               <li>
@@ -22,7 +19,6 @@ const Menu: React.FC = () => {
               </li>
           </ul>
       </nav>
-      <Outlet />
     </section>
 
   );

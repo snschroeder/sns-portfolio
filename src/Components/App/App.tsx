@@ -1,19 +1,19 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-import Header from '../Header/Header';
-import Menu from '../Menu/Menu';
-import About from '../About/About';
-import ContactForm from '../ContactForm/ContactForm';
 import ParticleCanvas from '../ParticleCanvas/ParticleCanvas';
+import Menu from '../Menu/Menu';
 
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
     <section className="app-container">
-      <Menu />
+        <ParticleCanvas />
+        <Menu />
+        <Outlet />
     </section>
   );
-}
+};
 
 export default App;
