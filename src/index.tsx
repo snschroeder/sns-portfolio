@@ -8,6 +8,7 @@ import {
 import App from './Components/App/App';
 import Gallery from './Components/Gallery/Gallery';
 import About from './Components/About/About';
+import HomePage from './Components/HomePage/HomePage';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 
 
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <About />,
+        element: <HomePage />,
       },
       {
         path: 'gallery',
