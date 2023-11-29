@@ -10,6 +10,7 @@ const ParticleCanvas: React.FC = () => {
   const canvasRef: React.Ref<any> = useRef();
   let animationFrame;
 
+  // TODO: add debounce to resizing
   const setSize = (): void => {
     setWindowX(innerWidth);
     setWindowY(innerHeight);

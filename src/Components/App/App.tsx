@@ -11,11 +11,7 @@ import './App.css';
 function App() {
   return (
     <section className="app-container">
-      {/* <Header /> */}
       <Menu />
-      {/* <About />
-      <ContactForm />
-      <ParticleCanvas /> */}
     </section>
   );
 }

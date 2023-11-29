@@ -7,6 +7,7 @@ import {
 
 import App from './Components/App/App';
 import Gallery from './Components/Gallery/Gallery';
+import About from './Components/About/About';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 
 
@@ -17,10 +18,16 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     errorElement: <PageNotFound />,
-    children: [{
-      path: 'gallery',
-      element: <Gallery />,
-    }],
+    children: [
+      {
+        path: 'gallery',
+        element: <Gallery />,
+      },
+      {
+        path: 'about',
+        element: <About />,
+      },
+    ],
   },
 ]);
 
