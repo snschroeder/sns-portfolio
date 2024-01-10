@@ -4,10 +4,11 @@ import './GallerySlide.css';
 
 interface Props {
   isLeftSlide: boolean,
-  title: string,
-  imgLink: string,
-  description: string,
-  techStack: string,
+  title: string;
+  imgLink: string;
+  tagline: string;
+  description: string;
+  techStack: string;
 }
 
 const GallerySlide: React.FC<Props> = ({ isLeftSlide, title, imgLink, description, techStack }: Props) => {
