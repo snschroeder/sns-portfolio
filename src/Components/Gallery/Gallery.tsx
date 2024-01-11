@@ -45,7 +45,7 @@ const Gallery: React.FC = () => {
       await ContentApiService.getGalleryContent()
         .then((res) => {
           if (res) {
-          // do stuff
+            setGalleryContent(res);
           }
         });
     } catch (error) {
