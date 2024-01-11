@@ -24,12 +24,21 @@
     animation-fill-mode: forwards;
 }
 
-.home-h3 {
-    font-size: 1em;
+.home-h2-dust {
+    font-size: 1.5em;
     opacity: 0;
     animation-name: fade-in;
     animation-duration: 2s;
-    animation-delay: 5s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+.home-h3 {
+    font-size: 1.2em;
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 2s;
+    animation-delay: 7.5s;
     animation-fill-mode: forwards;
 }
 

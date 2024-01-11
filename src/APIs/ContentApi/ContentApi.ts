@@ -8,7 +8,7 @@ const ContentApiService = {
     })
       .then((res) => 
         (!res.ok)
-          ? res.json().then(() => '')
+          ? Response.error()
           : res.json());
   },
 };

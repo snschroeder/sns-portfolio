@@ -41,15 +41,16 @@ const Gallery: React.FC = () => {
   ];
 
   const fetchGalleryData = async () => {
-    await ContentApiService.getGalleryContent()
-      .then((res) => {
-        if (res) {
+    try {
+      await ContentApiService.getGalleryContent()
+        .then((res) => {
+          if (res) {
           // do stuff
-        } else {
-          // populate default content if API is not populate or unavailable
-          setGalleryContent([...defaultGallery]);
-        }
-      });
+          }
+        });
+    } catch (error) {
+      setGalleryContent(defaultGallery);
+    }
   };
 
   useEffect(() => {
@@ -60,7 +61,7 @@ const Gallery: React.FC = () => {
         <section className="gallery-container">
           {galleryContent.map((galleryItem: GalleryItem, index: number) => (
             <GallerySlide
-              isLeftSlide={true}
+              isLeftSlide={index % 2 === 0}
               title={`${galleryItem.title}`}
               imgLink={`${galleryItem.imgLink}`}
               tagline={`${galleryItem.tagline}`}
