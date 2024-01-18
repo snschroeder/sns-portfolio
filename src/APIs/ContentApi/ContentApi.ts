@@ -20,6 +20,15 @@ const ContentApiService = {
           ? Response.error()
           : res.json());
   },
+
+  async getHomePageContent(): Promise<any> {
+    return fetch(`${config.API_ENDPOINT}/v1/home-page-content`, {
+    })
+      .then((res) => 
+        (!res.ok)
+          ? Response.error()
+          : res.json());
+  },
 };
 
 export default ContentApiService;
