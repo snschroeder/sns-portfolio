@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SocialLinks from '../SocialLinks/SocialLinks';
 
 import './HomePage.css';
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
@@ -16,7 +17,7 @@ const HomePage: React.FC = () => {
   const defaultHomePageContent = {
     homePageHeader: 'Hi there! My name is Scott.',
     homePageCta: 'Welcome to my portfolio. Please feel free to look around if you would like to see what I\'ve been working on.',
-    homePageDust: 'Oh, and please don\'t mind the dust, I can\'t figure out how to get rid of it.',
+    homePageDust: 'Oh, and please don\'t mind the dust, it seems I left a window open while I was away.',
     homePageDustJoke: 'Don\'t worry, though! Our tests have confirmed it is 73% asbestos free!',
   };
 
@@ -36,12 +37,13 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-        <section className="home-container">
-            <h1 className="home-h1">{homePageContent.homePageHeader}</h1>
-            <h2 className="home-h2">{homePageContent.homePageCta}</h2>
-            <h2 className="home-h2-dust">{homePageContent.homePageDust}</h2>
-            <h3 className="home-h3">{homePageContent.homePageDustJoke}</h3>
-        </section>
+    <section className="home-container">
+      <h1 className="home-h1">{homePageContent.homePageHeader}</h1>
+      <h2 className="home-h2">{homePageContent.homePageCta}</h2>
+      <h2 className="home-h2-dust">{homePageContent.homePageDust}</h2>
+      <h3 className="home-h3">{homePageContent.homePageDustJoke}</h3>
+      <SocialLinks />
+  </section>
   );
 };
 

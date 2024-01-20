@@ -1,0 +1,6 @@
+.social-link-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+    font-size: 1.5em;
+}
