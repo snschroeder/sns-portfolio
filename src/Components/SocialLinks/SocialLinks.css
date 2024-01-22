@@ -5,6 +5,11 @@
     font-size: 1.5em;
 }
 
+.social-link-container > a {
+    text-decoration: none;
+    color: #001861;
+}
+
 .animated {
     opacity: 0;
     animation-name: fade-in;

@@ -18,8 +18,12 @@ const SocialLinks: React.FC<Props> = ({ isAnimated }: Props) => {
 
   return (
         <section className={containerClass}>
+          <a href="https://www.linkedin.com/in/scott-schroeder/">
             <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a href="https://github.com/snschroeder">
             <FontAwesomeIcon icon={faGithub} />
+          </a>
             <FontAwesomeIcon icon={faEnvelope} />
             <FontAwesomeIcon icon={faFile} />
         </section>
