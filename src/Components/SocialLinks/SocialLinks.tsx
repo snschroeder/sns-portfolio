@@ -7,9 +7,17 @@ import { faFile } from '@fortawesome/free-solid-svg-icons';
 
 import './SocialLinks.css';
 
-const SocialLinks: React.FC = () => {
+interface Props {
+  isAnimated: boolean;
+}
+
+const SocialLinks: React.FC<Props> = ({ isAnimated }: Props) => {
+  const containerClass = isAnimated 
+    ? 'social-link-container animated'
+    : 'social-link-container'
+
   return (
-        <section className="social-link-container">
+        <section className={containerClass}>
             <FontAwesomeIcon icon={faLinkedin} />
             <FontAwesomeIcon icon={faGithub} />
             <FontAwesomeIcon icon={faEnvelope} />

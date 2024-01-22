@@ -42,7 +42,9 @@ const HomePage: React.FC = () => {
       <h2 className="home-h2">{homePageContent.homePageCta}</h2>
       <h2 className="home-h2-dust">{homePageContent.homePageDust}</h2>
       <h3 className="home-h3">{homePageContent.homePageDustJoke}</h3>
-      <SocialLinks />
+      <SocialLinks 
+        isAnimated={true}
+      />
   </section>
   );
 };
