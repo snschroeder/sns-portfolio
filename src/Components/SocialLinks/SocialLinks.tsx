@@ -27,7 +27,9 @@ const SocialLinks: React.FC<Props> = ({ isAnimated }: Props) => {
       <a href="mailto:snschroeder@gmail.com">
         <FontAwesomeIcon icon={faEnvelope} />
       </a>
+      <a href={`${process.env.PUBLIC_URL}/Scott Schroeder Resume.pdf`}>
         <FontAwesomeIcon icon={faFile} />
+      </a>
     </section>
   );
 };
