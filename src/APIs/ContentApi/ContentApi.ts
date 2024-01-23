@@ -29,6 +29,15 @@ const ContentApiService = {
           ? Response.error()
           : res.json());
   },
+
+  async getResumeLink(): Promise<string> {
+    return fetch(`${config.API_ENDPOINT}/v1/resume-link`, {
+    })
+      .then((res) => 
+        (!res.ok)
+          ? Response.error()
+          : res.json());
+  }
 };
 
 export default ContentApiService;

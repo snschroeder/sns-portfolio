@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './About.css';
+
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
+
+import './About.css';
 
 interface AboutObject {
   imgLink: string;
