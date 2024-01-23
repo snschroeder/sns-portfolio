@@ -100,16 +100,16 @@ const ParticleCanvas: React.FC = () => {
   }, [windowX, windowY]);
 
   return (
-        <section className="particle-container">
-            <canvas
-                className="particle-canvas"
-                id="test-canvas"
-                ref={canvasRef}
-                width={windowX}
-                height={windowY}
-            >
-            </canvas>
-        </section>
+    <section className="particle-container">
+        <canvas
+            className="particle-canvas"
+            id="test-canvas"
+            ref={canvasRef}
+            width={windowX}
+            height={windowY}
+        >
+        </canvas>
+    </section>
   );
 };
 
