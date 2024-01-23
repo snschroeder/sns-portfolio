@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import SocialLinks from '../SocialLinks/SocialLinks';
+import defaultContent from '../../defaultContent/defaultContent';
+import ContentApiService from '../../APIs/ContentApi/ContentApi';
 
 import './HomePage.css';
-import ContentApiService from '../../APIs/ContentApi/ContentApi';
+
 
 interface HomePageContent {
   homePageHeader: string;
@@ -14,13 +16,6 @@ interface HomePageContent {
 const HomePage: React.FC = () => {
   const [homePageContent, setHomePageContent] = useState({} as HomePageContent);
 
-  const defaultHomePageContent = {
-    homePageHeader: 'Hi there! My name is Scott.',
-    homePageCta: 'Welcome to my portfolio. Please feel free to look around if you would like to see what I\'ve been working on.',
-    homePageDust: 'Oh, and please don\'t mind the dust, it seems I left a window open while I was away.',
-    homePageDustJoke: 'Don\'t worry, though! Our tests have confirmed it is 73% asbestos free!',
-  };
-
   const fetchHomePageContent = async () => {
     try {
       await ContentApiService.getHomePageContent()
@@ -28,7 +23,7 @@ const HomePage: React.FC = () => {
           setHomePageContent(res);
         });
     } catch (error) {
-      setHomePageContent(defaultHomePageContent);
+      setHomePageContent(defaultContent.defaultHomePageContent);
     }
   };
 
