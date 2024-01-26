@@ -17,7 +17,7 @@ const GallerySlide: React.FC<Props> = ({ isLeftSlide, title, imgLink, descriptio
         <img src={imgLink} className="slide-image" />
         <section className="slide-details">
             <h4 className="slide-title">{title}</h4>
-            <p>{description}</p>
+            <p className="slide-description">{description}</p>
             <h4 className="slide-title">Tech Stack:</h4>
             <p>{techStack}</p>
         </section>
@@ -25,7 +25,7 @@ const GallerySlide: React.FC<Props> = ({ isLeftSlide, title, imgLink, descriptio
     : <section className="gallery-slide">
         <section className="slide-details">
             <h4 className="slide-title">{title}</h4>
-            <p>{description}</p>
+            <p className="slide-description">{description}</p>
             <h4 className="slide-title">Tech Stack:</h4>
             <p>{techStack}</p>
         </section>

@@ -11,8 +11,13 @@
 
 .slide-image {
     margin: 1em;
+    min-width: 40%;
 }
 
 .slide-details {
     margin: 1em;
+}
+
+.slide-description {
+    white-space: pre-wrap;
 }
