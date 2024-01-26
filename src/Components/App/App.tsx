@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import ParticleCanvas from '../ParticleCanvas/ParticleCanvas';
 import Menu from '../Menu/Menu';
+import Footer from '../Footer/Footer';
 
 import './App.css';
 
@@ -12,6 +13,7 @@ const App: React.FC = () => {
         <ParticleCanvas />
         <Menu />
         <Outlet />
+        <Footer />
     </section>
   );
 };

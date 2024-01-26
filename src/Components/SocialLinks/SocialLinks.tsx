@@ -5,8 +5,10 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
 
-import './SocialLinks.css';
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
+
+import './SocialLinks.css';
+
 
 interface Props {
   isAnimated: boolean;
