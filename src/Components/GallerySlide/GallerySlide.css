@@ -1,5 +1,6 @@
 .gallery-slide {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     width: 100%;
     min-height: 33vh;
@@ -20,4 +21,14 @@
 
 .slide-description {
     white-space: pre-wrap;
+}
+
+@media screen and (max-width: 730px) {
+    .left {
+        flex-direction: column;
+    }
+
+    .right {
+        flex-direction: column-reverse;
+    }
 }
