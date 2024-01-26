@@ -9,3 +9,11 @@
 .about-header {
     align-self: center;
 }
+
+.currently-list {
+    text-align: center;
+}
+
+.about-body {
+    white-space: pre-wrap;
+}

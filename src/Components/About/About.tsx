@@ -36,17 +36,19 @@ const About: React.FC = () => {
     <section className="about-container">
       <img src={aboutContent.imgLink} className="about-image" />
       <h3 className="about-header">{aboutContent.header}</h3>
-      <p>{aboutContent.body}</p>
-      <h4>Currrently reading: </h4>
-      <p>{aboutContent.currentlyReading}</p>
-      <h4>Currently playing: </h4>
-      {
-        aboutContent.currentlyPlaying 
-          ? aboutContent.currentlyPlaying.map((val) => (
-            <p>{val}</p>
-          ))
-          : <></>
-      }
+      <p className="about-body">{aboutContent.body}</p>
+      <section className="currently-list">
+        <h4>Currrently reading: </h4>
+        <p>{aboutContent.currentlyReading}</p>
+        <h4>Currently playing: </h4>
+        {
+          aboutContent.currentlyPlaying 
+            ? aboutContent.currentlyPlaying.map((val) => (
+              <p>{val}</p>
+            ))
+            : <></>
+        }
+      </section>
     </section>
   );
 };
