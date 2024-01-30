@@ -7,7 +7,7 @@ const defaultContent = {
   },
 
   defaultAbout: {
-    imgLink: 'http://placekitten.com/g/300/400',
+    imgLink: `${process.env.PUBLIC_URL}/climbing.jpg`,
     header: 'About me',
     body: `I have been working professionally as a full stack developer since 2019, with a focus on React, TypeScript, Node.js, Express.js, and both PostgreSQL and MySQL. 
     
@@ -22,7 +22,7 @@ PS Audio also gave me the chance to expand my knowledge base rapidly. Initially,
 Prior to working at PS Audio, I attended Thinkful’s full time coding boot camp, working closely with peers and mentors to to learn modern best practices for developing with React, Node, and JavaScript.
     
 In my free time, you’ll likely find me learning Godot, hiking with my dog, gaming, or reading.`,
-    currentlyReading: 'The Dispossessed by Ursula K Le Guin',
+    currentlyReading: 'Hyperion by Dan Simmons',
     currentlyPlaying: ['Path of Exile', 'Bloodstained: Ritual of the Night', 'Palworld'],
   },
 

@@ -6,6 +6,10 @@
     flex-direction: column;
 }
 
+.about-image {
+    min-width: 360px;
+}
+
 .about-header {
     align-self: center;
 }
@@ -16,4 +20,10 @@
 
 .about-body {
     white-space: pre-wrap;
+}
+
+@media screen and (max-width: 730px) {
+    .about-container {
+        width: 96%;
+    }
 }
