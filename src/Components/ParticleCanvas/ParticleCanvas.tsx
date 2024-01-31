@@ -70,11 +70,6 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
     setParticleArray([...particles]);
   };
 
-  const setSize = (): void => {
-    setupCanvas();
-  };
-  
-
   const animate = () => {
     const ctx = canvasRef.current.getContext('2d');
 
@@ -95,11 +90,6 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
     setupCanvas();
     generateParticleField(50);
   }, [windowX, windowY])
- 
-  // useEffect(() => {
-  //   console.log(document.body.scrollHeight);
-  //   setupCanvas();
-  // }, [document.body.scrollHeight, windowX])
 
   return (
     <section className="particle-container">
