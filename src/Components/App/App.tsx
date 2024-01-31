@@ -16,9 +16,11 @@ const App: React.FC = () => {
   const appContainerRef: React.Ref<any> = useRef();
 
   const requestResize = () => {
-    setPageHeight(innerHeight);
-    setScrollHeight(appContainerRef.current.scrollHeight);
-    setResizeNeeded(true);
+    setTimeout(() => {
+      setPageHeight(innerHeight);
+      setScrollHeight(appContainerRef.current.scrollHeight);
+      setResizeNeeded(true);
+    }, 50);
   }
 
   useEffect(() => {
