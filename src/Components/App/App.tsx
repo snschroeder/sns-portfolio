@@ -23,14 +23,21 @@ const App: React.FC = () => {
     }, 50);
   }
 
-  useEffect(() => {
+  const setSize = () => {
     setPageWidth(innerWidth);
-    
     setScrollHeight(appContainerRef.current.scrollHeight);
     
     if (scrollHeight > innerHeight && scrollHeight !== pageHeight) {
       setPageHeight(appContainerRef.current.scrollHeight);
     }
+  }
+
+  useEffect(() => {
+    addEventListener('resize', setSize);
+  })
+
+  useEffect(() => {
+    setSize();
     setResizeNeeded(false);
   }, [pageWidth, pageHeight, scrollHeight, resizeNeeded])
 

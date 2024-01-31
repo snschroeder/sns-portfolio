@@ -13,6 +13,7 @@
 .slide-image {
     margin: 1em;
     min-width: 40%;
+    max-height: 800px;
 }
 
 .slide-details {
