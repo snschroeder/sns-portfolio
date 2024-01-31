@@ -3,6 +3,8 @@ import ContentApiService from '../../APIs/ContentApi/ContentApi';
 import defaultContent from '../../defaultContent/defaultContent';
 
 import GallerySlide from '../GallerySlide/GallerySlide';
+import ResizePixel from '../ResizePixel/ResizePixel';
+import { useSetResizeNeeded } from '../App/App';
 
 import './Gallery.css';
 
@@ -16,6 +18,7 @@ interface GalleryItem {
 
 const Gallery: React.FC = () => {
   const [galleryContent, setGalleryContent] = useState(new Array<GalleryItem>);
+
 
   const fetchGalleryData = async () => {
     try {
@@ -32,21 +35,25 @@ const Gallery: React.FC = () => {
 
   useEffect(() => {
     fetchGalleryData();
+
   }, []);
 
   return (
-    <section className="gallery-container">
-      {galleryContent.map((galleryItem: GalleryItem, index: number) => (
-        <GallerySlide
-          isLeftSlide={index % 2 === 0}
-          title={`${galleryItem.title}`}
-          imgLink={`${galleryItem.imgLink}`}
-          tagline={`${galleryItem.tagline}`}
-          description={`${galleryItem.description}`}
-          techStack={`${galleryItem.techStack}`}
-        />
-      ))}
-    </section>
+    <>
+      <section className="gallery-container">
+        {galleryContent.map((galleryItem: GalleryItem, index: number) => (
+          <GallerySlide
+            isLeftSlide={index % 2 === 0}
+            title={`${galleryItem.title}`}
+            imgLink={`${galleryItem.imgLink}`}
+            tagline={`${galleryItem.tagline}`}
+            description={`${galleryItem.description}`}
+            techStack={`${galleryItem.techStack}`}
+          />
+        ))}
+      </section>
+      <ResizePixel />
+    </>
   );
 };
 

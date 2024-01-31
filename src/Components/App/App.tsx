@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useOutletContext } from 'react-router-dom';
 
 import ParticleCanvas from '../ParticleCanvas/ParticleCanvas';
 import Menu from '../Menu/Menu';
@@ -7,7 +7,9 @@ import Footer from '../Footer/Footer';
 
 import './App.css';
 
-const App: React.FC = () => {
+type ContextType = { setResizeNeeded: (val: boolean) => void }
+
+export default function App() {
   const [pageWidth, setPageWidth] = useState(innerWidth);
   const [pageHeight, setPageHeight] = useState(innerHeight);
   const [scrollHeight, setScrollHeight] = useState(0);
@@ -15,24 +17,18 @@ const App: React.FC = () => {
 
   const appContainerRef: React.Ref<any> = useRef();
 
-  const requestResize = () => {
-    setTimeout(() => {
-      setPageHeight(innerHeight);
-      setScrollHeight(appContainerRef.current.scrollHeight);
-      setResizeNeeded(true);
-    }, 50);
-  }
 
   const setSize = () => {
     setPageWidth(innerWidth);
     setScrollHeight(appContainerRef.current.scrollHeight);
     
-    if (scrollHeight > innerHeight && scrollHeight !== pageHeight) {
+    if (scrollHeight > pageHeight && scrollHeight !== pageHeight) {
       setPageHeight(appContainerRef.current.scrollHeight);
     }
   }
 
   useEffect(() => {
+    setSize();
     addEventListener('resize', setSize);
   })
 
@@ -44,11 +40,13 @@ const App: React.FC = () => {
   return (
     <section className="app-container" ref={appContainerRef}>
         <ParticleCanvas windowX={pageWidth} windowY={pageHeight} />
-        <Menu requestResize={requestResize} />
-        <Outlet />
+        <Menu />
+        <Outlet context={{ setResizeNeeded }} />
         <Footer />
     </section>
   );
 };
 
-export default App;
+export const useSetResizeNeeded = () => {
+  return useOutletContext<ContextType>();
+}

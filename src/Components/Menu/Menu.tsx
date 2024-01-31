@@ -3,26 +3,19 @@ import { Link } from 'react-router-dom';
 
 import './Menu.css';
 
-interface Props {
-  requestResize: () => void;
-}
-
-const Menu: React.FC<Props> = ({ requestResize }: Props) => {
-  const handleLinkClick = () => {
-    requestResize();
-  }
+const Menu: React.FC= () => {
 
   return (
     <section className="menu-container">
         <nav className="menu">
           <ul className="menu-list">
-              <li onClick={handleLinkClick}>
+              <li>
                 <Link to={'/'}>Home</Link>
               </li>
-              <li onClick={handleLinkClick}>
+              <li>
                 <Link to={'about'}>About</Link>
               </li>
-              <li onClick={handleLinkClick}>
+              <li>
                 <Link to={'gallery'}>Gallery</Link>
               </li>
           </ul>
