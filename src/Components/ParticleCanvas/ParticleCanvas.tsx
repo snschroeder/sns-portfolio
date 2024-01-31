@@ -2,9 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import Particle from './Particle';
 import './ParticleCanvas.css';
 
-const ParticleCanvas: React.FC = () => {
-  const [windowX, setWindowX] = useState(innerWidth);
-  const [windowY, setWindowY] = useState(innerHeight);
+interface Props {
+  windowX: number;
+  windowY: number;
+}
+
+const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
   const [particleArray, setParticleArray] = useState(new Array<Particle>);
 
   const canvasRef: React.Ref<any> = useRef();
@@ -38,10 +41,19 @@ const ParticleCanvas: React.FC = () => {
     return direction === 0 ? val : -val;
   };
 
-  const generateParticleField = (amount: number) => {
+  const setupCanvas = () => {
     const ctx = canvasRef.current.getContext('2d');
-    ctx.fillStyle = 'rgba(223, 207, 137, 0.4)';
+    ctx.canvas.height = windowX;
+    ctx.canvas.height = windowY;
+    ctx.fillStyle = '#eee'
     ctx.fillRect(0, 0, windowX, windowY);
+    ctx.fillStyle = 'rgba(223, 207, 137, 0.4)';
+    return ctx;
+  }
+
+  const generateParticleField = (amount: number) => {
+    const ctx = setupCanvas();
+
     let particles = new Array<Particle>(amount);
 
     for (let i = 0; i < amount; i += 1) {
@@ -59,19 +71,7 @@ const ParticleCanvas: React.FC = () => {
   };
 
   const setSize = (): void => {
-    if (Math.abs(innerWidth - windowX) > 50) {
-      setWindowX(innerWidth);
-      setParticleArray([]);
-    }
-  
-    if (Math.abs(innerHeight - windowY) > 50) {
-      setWindowY(innerHeight);
-      setParticleArray([]);
-    }
-
-    if (particleArray.length === 0) {
-      generateParticleField(50);
-    }
+    setupCanvas();
   };
   
 
@@ -86,24 +86,26 @@ const ParticleCanvas: React.FC = () => {
     });
   };
 
-  useEffect(() => {
-    addEventListener('resize', () => setSize());
-    generateParticleField(50);
-  }, []);
 
   useEffect(() => {
     animate();
   }, [particleArray]);
 
   useEffect(() => {
-    setSize();
-  }, [windowX, windowY]);
+    setupCanvas();
+    generateParticleField(50);
+  }, [windowX, windowY])
+ 
+  // useEffect(() => {
+  //   console.log(document.body.scrollHeight);
+  //   setupCanvas();
+  // }, [document.body.scrollHeight, windowX])
 
   return (
     <section className="particle-container">
         <canvas
             className="particle-canvas"
-            id="test-canvas"
+            id="particle-canvas"
             ref={canvasRef}
             width={windowX}
             height={windowY}

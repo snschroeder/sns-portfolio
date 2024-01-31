@@ -62,8 +62,6 @@ class Particle {
   public scatterParticle(event: any): void {
     let moveX = event.movementX;
     let moveY = event.movementY;
-    console.log(moveX);
-    console.log(moveY);
     // detect mouse movement
     // do we need to detect over some short timeframe? 
     // for instance, move mouse from left to right, we scatter right
