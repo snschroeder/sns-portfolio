@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import ParticleCanvas from '../ParticleCanvas/ParticleCanvas';
@@ -8,17 +8,15 @@ import Footer from '../Footer/Footer';
 import './App.css';
 
 const App: React.FC = () => {
-  const [windowX, setWindowX] = useState(0);
-  const [windowY, setWindowY] = useState(0);
-
-  const appContainerRef: React.Ref<any> = useRef();
+  const [windowX, setWindowX] = useState(innerWidth);
+  const [windowY, setWindowY] = useState(innerHeight);
 
   const setSize = () => {
-    if (appContainerRef.current) {
-      console.log('updating');
-      setWindowX(innerWidth);
-      setWindowY(appContainerRef.current.scrollHeight);
-    }
+    setWindowX(innerWidth);
+    document.body.scrollHeight > innerHeight
+      ? setWindowY(document.body.scrollHeight)
+      : setWindowY(innerHeight);
+    
   }
 
   useEffect(() => {
@@ -26,12 +24,20 @@ const App: React.FC = () => {
     addEventListener('resize', () => setSize());
   }, []);
 
+  useEffect(() => {
+    setInterval(() => {
+      if (windowX !== innerWidth || windowY !== document.body.scrollHeight) {
+        setSize();
+      }
+    }, 200);
+  }, []);
+
   return (
-    <section id="app-container" ref={appContainerRef}>
+    <section className="app-container">
         <ParticleCanvas windowX={windowX} windowY={windowY} />
         <Menu />
         <Outlet />
-        {/* <Footer /> */}
+        <Footer />
     </section>
   );
 };
