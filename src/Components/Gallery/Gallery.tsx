@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
 import defaultContent from '../../defaultContent/defaultContent';
+import GallerySlide from '../GallerySlide/GallerySlide';
+import { useSetSizeCheck } from '../App/App';
+
 import config from '../../config';
 
-import GallerySlide from '../GallerySlide/GallerySlide';
 
 import './Gallery.css';
 
@@ -17,6 +20,7 @@ interface GalleryItem {
 
 const Gallery: React.FC = () => {
   const [galleryContent, setGalleryContent] = useState(new Array<GalleryItem>);
+  const { setSizeCheck } = useSetSizeCheck();
 
 
   const fetchGalleryData = async () => {
@@ -37,8 +41,10 @@ const Gallery: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchGalleryData();
-
+    fetchGalleryData()
+      .then(() => {
+        setSizeCheck(5);
+      })
   }, []);
 
   return (
