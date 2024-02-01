@@ -174,8 +174,6 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
       sorted = selectionSort([...randomizedArr]);
     } else if (sortType === 'insertion-sort') {
       sorted = insertionSort([...randomizedArr]);
-    // } else if (sortType === 'merge-sort') {
-    //   sorted = mergeSort([...randomizedArr]);
     }
     setSortedArr(sorted);
   };
@@ -222,7 +220,7 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
   };
 
   return (
-    <>
+    <div className="sort-viz-container">
       <section className="button-group">
         <button type="button" className="randomize-button" onClick={() => genRandomizedArr(120, 400)}>Generate new array</button>
         <button type="button" className="animate" onClick={() => animate()}>Animate!</button>
@@ -242,6 +240,6 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
           }
         </ul>
       </section>
-    </>
+    </div>
   );
 }

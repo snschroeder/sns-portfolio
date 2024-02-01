@@ -1,8 +1,12 @@
+.sort-viz-container {
+  margin: 1em;
+  min-width: 40%;
+  max-height: 800px;
+}
+
 .vizDisplay {
     text-align: center;
     margin: 0 auto;
-    width: 95vw;
-    height: 90vh;
   }
   
   .button-group {
