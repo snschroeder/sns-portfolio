@@ -7,46 +7,49 @@ import Footer from '../Footer/Footer';
 
 import './App.css';
 
-type ContextType = { setResizeNeeded: (val: boolean) => void }
+interface OutletContextType {
+  resizeNeeded: boolean;
+  setResizeNeeded: (val: boolean) => void;
+}
+
+interface PageDimensions {
+  pageWidth: number;
+  pageHeight: number;
+}
 
 export default function App() {
-  const [pageWidth, setPageWidth] = useState(innerWidth);
-  const [pageHeight, setPageHeight] = useState(innerHeight);
+
+  const [pageDimensions, setPageDimensions] = useState({} as PageDimensions);
   const [scrollHeight, setScrollHeight] = useState(0);
   const [resizeNeeded, setResizeNeeded] = useState(false);
 
   const appContainerRef: React.Ref<any> = useRef();
 
+  const setDimensions = () => {
+    const pageWidth = innerWidth;
+    let pageHeight = innerHeight;
 
-  const setSize = () => {
-    setPageWidth(innerWidth);
-    setScrollHeight(appContainerRef.current.scrollHeight);
-    
-    if (scrollHeight > pageHeight && scrollHeight !== pageHeight) {
-      setPageHeight(appContainerRef.current.scrollHeight);
+    if (scrollHeight > pageHeight) {
+      pageHeight = scrollHeight;
     }
+    setPageDimensions({ pageWidth, pageHeight });
   }
 
   useEffect(() => {
-    setSize();
-    addEventListener('resize', setSize);
-  })
-
-  useEffect(() => {
-    setSize();
-    setResizeNeeded(false);
-  }, [pageWidth, pageHeight, scrollHeight, resizeNeeded])
+    setScrollHeight(appContainerRef.current.scrollHeight);
+    setDimensions();
+  }, [pageDimensions, resizeNeeded, scrollHeight])
 
   return (
     <section className="app-container" ref={appContainerRef}>
-        <ParticleCanvas windowX={pageWidth} windowY={pageHeight} />
+        <ParticleCanvas windowX={pageDimensions.pageWidth} windowY={pageDimensions.pageHeight} />
         <Menu />
-        <Outlet context={{ setResizeNeeded }} />
+        <Outlet context={{ resizeNeeded, setResizeNeeded }} />
         <Footer />
     </section>
   );
 };
 
 export const useSetResizeNeeded = () => {
-  return useOutletContext<ContextType>();
+  return useOutletContext<OutletContextType>();
 }

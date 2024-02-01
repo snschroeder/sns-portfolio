@@ -4,9 +4,10 @@ import { useSetResizeNeeded } from '../App/App';
 import './ResizePixel.css';
 
 const ResizePixel: React.FC = () => {
-    const { setResizeNeeded } = useSetResizeNeeded();
-    useEffect(() =>{
-        setResizeNeeded(true);
+    const { resizeNeeded, setResizeNeeded } = useSetResizeNeeded();
+    
+    useEffect(() => {
+        setResizeNeeded(!resizeNeeded);
     }, []);
 
 
