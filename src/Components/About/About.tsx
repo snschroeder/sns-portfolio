@@ -49,8 +49,8 @@ const About: React.FC = () => {
         <h4>Currently playing: </h4>
         {
           aboutContent.currentlyPlaying 
-            ? aboutContent.currentlyPlaying.map((val) => (
-              <p>{val}</p>
+            ? aboutContent.currentlyPlaying.map((val, index: number) => (
+              <p key={index}>{val}</p>
             ))
             : <></>
         }

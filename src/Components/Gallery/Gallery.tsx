@@ -45,6 +45,7 @@ const Gallery: React.FC = () => {
     <section className="gallery-container">
       {galleryContent.map((galleryItem: GalleryItem, index: number) => (
         <GallerySlide
+          key={index}
           isLeftSlide={index % 2 === 0}
           title={`${galleryItem.title}`}
           imgLink={`${galleryItem.imgLink}`}
