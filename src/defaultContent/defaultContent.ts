@@ -58,7 +58,7 @@ It was also imperative that the API handle a high static load from the thousands
     },
     {
       title: 'Sort Viz',
-      imgLink: 'http://placekitten.com/g/400/400',
+      imgLink: 'sort-viz',
       tagline: 'Building a path to understanding',
       description: `This application is here not because it is particularly impressive on its own but because it sheds light on who I am as a developer.
 

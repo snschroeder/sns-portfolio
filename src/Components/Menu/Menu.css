@@ -12,10 +12,11 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 0;
+    background: none;
 }
 
 .menu-list > li > a {
-    text-decoration: underline;
+    text-decoration: none;
     color: #001861;
     font-size: 1.2em;
     font-weight: 700;

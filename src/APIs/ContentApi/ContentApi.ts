@@ -37,7 +37,7 @@ const ContentApiService = {
         (!res.ok)
           ? Response.error()
           : res.json());
-  }
+  },
 };
 
 export default ContentApiService;
