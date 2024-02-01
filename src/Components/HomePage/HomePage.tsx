@@ -40,8 +40,7 @@ const HomePage: React.FC = () => {
     fetchHomePageContent()
       .then(() => {
         setSizeCheck(5);
-      })
-    
+      });
   }, []);
 
   return (

@@ -44,7 +44,7 @@ const Gallery: React.FC = () => {
     fetchGalleryData()
       .then(() => {
         setSizeCheck(5);
-      })
+      });
   }, []);
 
   return (

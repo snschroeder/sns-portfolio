@@ -72,7 +72,7 @@ This, I feel, sums me up well as a developer - I love tackling interesting probl
       `,
       techStack: 'React, JavaScript',
     },
-  ]
-}
+  ],
+};
 
 export default defaultContent;

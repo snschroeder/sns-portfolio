@@ -45,7 +45,7 @@ export default function App() {
       pageHeight = scrollHeight;
     }
     setPageDimensions({ pageWidth, pageHeight });
-  }
+  };
 
   useEffect(() => {
     addEventListener('resize', setDimensions);
@@ -57,7 +57,7 @@ export default function App() {
       setDimensions();
       setSizeCheck(sizeCheck - 1);
     }
-  }, [scrollHeight, sizeCheck, pageDimensions])
+  }, [scrollHeight, sizeCheck, pageDimensions]);
 
   return (
     <section className="app-container" id="app-container" ref={appContainerRef}>
@@ -67,8 +67,8 @@ export default function App() {
         <Footer />
     </section>
   );
-};
+}
 
 export const useSetSizeCheck = () => {
   return useOutletContext<AppOutletContext>();
-}
+};

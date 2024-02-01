@@ -41,7 +41,7 @@ const About: React.FC = () => {
     fetchAboutData()
       .then(() => {
         setSizeCheck(5);
-      })
+      });
   }, []);
 
   return (

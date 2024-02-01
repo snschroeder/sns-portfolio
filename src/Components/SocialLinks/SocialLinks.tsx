@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -26,15 +26,15 @@ const SocialLinks: React.FC<Props> = ({ isAnimated }: Props) => {
     } catch (error) {
       setResumeLink(resumeLink);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchResumeLink()
+    fetchResumeLink();
   }, []);
 
   const containerClass = isAnimated 
     ? 'social-link-container animated'
-    : 'social-link-container'
+    : 'social-link-container';
 
   return (
     <section className={containerClass}>

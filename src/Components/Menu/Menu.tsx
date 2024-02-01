@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './Menu.css';
 
-const Menu: React.FC= () => {
+const Menu: React.FC = () => {
 
   return (
     <section className="menu-container">

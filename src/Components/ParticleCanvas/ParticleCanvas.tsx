@@ -45,11 +45,11 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
     const ctx = canvasRef.current.getContext('2d');
     ctx.canvas.height = windowX;
     ctx.canvas.height = windowY;
-    ctx.fillStyle = '#eee'
+    ctx.fillStyle = '#eee';
     ctx.fillRect(0, 0, windowX, windowY);
     ctx.fillStyle = 'rgba(223, 207, 137, 0.4)';
     return ctx;
-  }
+  };
 
   const generateParticleField = (amount: number) => {
     const ctx = setupCanvas();
@@ -89,16 +89,16 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
   useEffect(() => {
     setupCanvas();
     generateParticleField(50);
-  }, [windowX, windowY])
+  }, [windowX, windowY]);
 
   return (
     <section className="particle-container">
         <canvas
-            className="particle-canvas"
-            id="particle-canvas"
-            ref={canvasRef}
-            width={windowX}
-            height={windowY}
+          className="particle-canvas"
+          id="particle-canvas"
+          ref={canvasRef}
+          width={windowX}
+          height={windowY}
         >
         </canvas>
     </section>
