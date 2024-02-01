@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SocialLinks from '../SocialLinks/SocialLinks';
 import defaultContent from '../../defaultContent/defaultContent';
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
+import config from '../../config';
 
 import './HomePage.css';
 
@@ -17,13 +18,17 @@ const HomePage: React.FC = () => {
   const [homePageContent, setHomePageContent] = useState({} as HomePageContent);
 
   const fetchHomePageContent = async () => {
-    try {
-      await ContentApiService.getHomePageContent()
-        .then((res) => {
-          setHomePageContent(res);
-        });
-    } catch (error) {
+    if (!config.API_ENDPOINT) {
       setHomePageContent(defaultContent.defaultHomePageContent);
+    } else {
+      try {
+        await ContentApiService.getHomePageContent()
+          .then((res) => {
+            setHomePageContent(res);
+          });
+      } catch (error) {
+        setHomePageContent(defaultContent.defaultHomePageContent);
+      }
     }
   };
 

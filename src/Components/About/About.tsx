@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import config from '../../config';
 
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
 import defaultContent from '../../defaultContent/defaultContent';
@@ -17,15 +18,19 @@ const About: React.FC = () => {
   const [aboutContent, setAboutContent] = useState({} as AboutObject);
 
   const fetchAboutData = async () => {
-    try {
-      await ContentApiService.getAboutContent()
-        .then((res) => {
-          if (res) {
-            setAboutContent(res);
-          }
-        });
-    } catch (error) {
+    if (!config.API_ENDPOINT) {
       setAboutContent(defaultContent.defaultAbout);
+    } else {
+      try {
+        await ContentApiService.getAboutContent()
+          .then((res) => {
+            if (res) {
+              setAboutContent(res);
+            }
+          });
+      } catch (error) {
+        setAboutContent(defaultContent.defaultAbout);
+      }
     }
   };
 

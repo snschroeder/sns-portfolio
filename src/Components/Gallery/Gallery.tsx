@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
 import defaultContent from '../../defaultContent/defaultContent';
+import config from '../../config';
 
 import GallerySlide from '../GallerySlide/GallerySlide';
 
@@ -19,15 +20,19 @@ const Gallery: React.FC = () => {
 
 
   const fetchGalleryData = async () => {
-    try {
-      await ContentApiService.getGalleryContent()
-        .then((res) => {
-          if (res) {
-            setGalleryContent(res);
-          }
-        });
-    } catch (error) {
+    if (!config.API_ENDPOINT) {
       setGalleryContent(defaultContent.defaultGallery);
+    } else {
+      try {
+        await ContentApiService.getGalleryContent()
+          .then((res) => {
+            if (res) {
+              setGalleryContent(res);
+            }
+          });
+      } catch (error) {
+        setGalleryContent(defaultContent.defaultGallery);
+      }
     }
   };
 
