@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import ResizePixel from '../ResizePixel/ResizePixel';
-
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
 import defaultContent from '../../defaultContent/defaultContent';
 
@@ -52,7 +50,6 @@ const About: React.FC = () => {
             : <></>
         }
       </section>
-      <ResizePixel />
     </section>
   );
 };

@@ -3,8 +3,6 @@ import ContentApiService from '../../APIs/ContentApi/ContentApi';
 import defaultContent from '../../defaultContent/defaultContent';
 
 import GallerySlide from '../GallerySlide/GallerySlide';
-import ResizePixel from '../ResizePixel/ResizePixel';
-import { useSetResizeNeeded } from '../App/App';
 
 import './Gallery.css';
 
@@ -39,21 +37,18 @@ const Gallery: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <section className="gallery-container">
-        {galleryContent.map((galleryItem: GalleryItem, index: number) => (
-          <GallerySlide
-            isLeftSlide={index % 2 === 0}
-            title={`${galleryItem.title}`}
-            imgLink={`${galleryItem.imgLink}`}
-            tagline={`${galleryItem.tagline}`}
-            description={`${galleryItem.description}`}
-            techStack={`${galleryItem.techStack}`}
-          />
-        ))}
-      </section>
-      <ResizePixel />
-    </>
+    <section className="gallery-container">
+      {galleryContent.map((galleryItem: GalleryItem, index: number) => (
+        <GallerySlide
+          isLeftSlide={index % 2 === 0}
+          title={`${galleryItem.title}`}
+          imgLink={`${galleryItem.imgLink}`}
+          tagline={`${galleryItem.tagline}`}
+          description={`${galleryItem.description}`}
+          techStack={`${galleryItem.techStack}`}
+        />
+      ))}
+    </section>
   );
 };
 
