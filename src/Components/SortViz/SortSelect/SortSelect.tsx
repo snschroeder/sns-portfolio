@@ -6,7 +6,7 @@ export default function Search() {
   const [sortType, setSortType] = useState('quick-sort');
 
   return (
-    <>
+    <div  className="viz-container">
       <form className="sort-form">
         <select className="search-select" onChange={(e) => setSortType(e.target.value)}>
           <option value="quick-sort">quick sort</option>
@@ -17,6 +17,6 @@ export default function Search() {
         </select>
       </form>
       <SortViz sortType={sortType} />
-    </>
+    </div>
   );
 }

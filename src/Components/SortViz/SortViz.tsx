@@ -222,7 +222,6 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
   return (
     <div className="sort-viz-container">
       <section className="button-group">
-        <button type="button" className="randomize-button" onClick={() => genRandomizedArr(120, 400)}>Generate new array</button>
         <button type="button" className="animate" onClick={() => animate()}>Animate!</button>
         <button type="button" className="animate-reverse" onClick={() => animateReverse()}>Undo!</button>
       </section>

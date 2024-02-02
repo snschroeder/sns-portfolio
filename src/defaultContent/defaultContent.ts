@@ -60,7 +60,7 @@ It was also imperative that the API handle a high static load from the thousands
       title: 'Sort Viz',
       imgLink: 'sort-viz',
       tagline: 'Building a path to understanding',
-      description: `This application is here primarily because it sheds light on who I am as a developer.
+      description: `This application is here primarily because it sheds light on who I am as a developer. Plus it's pretty to watch.
 
 It's a simple app built in a weekend that uses React to animate several different sorting algorithms, built for the sole sake of learning how to animate something with React without using any libraries.
       
