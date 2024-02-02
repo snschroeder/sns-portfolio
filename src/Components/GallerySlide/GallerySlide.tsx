@@ -1,5 +1,5 @@
 import React from 'react';
-import SortViz from '../SortViz/SortViz';
+import SortSearch from '../SortViz/SortSelect/SortSelect';
 
 import './GallerySlide.css';
 
@@ -17,7 +17,7 @@ const GallerySlide: React.FC<Props> = ({ isLeftSlide, title, imgLink, descriptio
     <section className="gallery-slide left">
       {
         imgLink === 'sort-viz'
-          ? <SortViz sortType={'quick-sort'} />
+          ? <SortSearch />
           : <img src={imgLink} className="slide-image" />
         }
         <section className="slide-details">
@@ -36,7 +36,7 @@ const GallerySlide: React.FC<Props> = ({ isLeftSlide, title, imgLink, descriptio
       </section>
       {
         imgLink === 'sort-viz'
-          ? <SortViz sortType={'quick-sort'} />
+          ? <SortSearch />
           : <img src={imgLink} className="slide-image" />
         }
     </section>;
