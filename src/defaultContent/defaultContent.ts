@@ -29,13 +29,13 @@ In my free time, you’ll likely find me learning Godot, hiking with my dog, gam
   defaultGallery: [
     {
       title: 'PS Audio Burn-in',
-      imgLink: 'http://placekitten.com/g/400/400',
+      imgLink: `${process.env.PUBLIC_URL}/Burnin-monitor.png`,
       tagline: 'The final gatekeeper certifying each and every PowerPlant produced',
       description: `In the realm of high-end audio, power matters - so much so that some people install dedicated power lines just for their stereos.
 
-At PS Audio, we had a different approach - rebuild the sine wave right when we needed it using our PowerPlants. The Burn-in system was our final system test each and every Power Plant we produced. 
+At PS Audio, we had a different approach - rebuild the sine wave right when we needed it using our PowerPlants. The Burn-in system was our final system test for each and every Power Plant produced at PS Audio. 
       
-After the techs assembled each PowerPlant, the Burn-in system would monitor each unit under load to certify it was ready before it left our warehouse. If a unit fails, detailed troubleshooting steps are provided with details on the failure and fix. 
+After the techs assembled each PowerPlant, the Burn-in system monitors each unit under load to certify it was ready before it left our warehouse. If a unit fails, detailed troubleshooting steps are provided with details on the failure and fix. 
       
 And for our engineering team, detailed diagnostics were provided from each test in an Excel format so that our Manufacturing Engineer could monitor the efficiency of our production and make adjustments to the testing parameters if needed.
       `,
@@ -43,7 +43,7 @@ And for our engineering team, detailed diagnostics were provided from each test 
     },
     {
       title: 'PS Audio PowerPlay API',
-      imgLink: 'http://placekitten.com/g/400/400',
+      imgLink: `${process.env.PUBLIC_URL}/PowerPlay-API.png`,
       tagline: 'Connecting users to their data',
       description: `PowerPlay is feature built-in to most Power Plants produced by PS Audio that allows them to report power data to our servers. One of the first projects for me at PS Audio was to build a new PowerPlay API to connect our users with their data. 
       

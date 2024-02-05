@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     min-height: 33vh;
     margin: 0 auto;
@@ -12,8 +13,9 @@
 
 .slide-image {
     margin: 1em;
-    min-width: 40%;
-    max-height: 800px;
+    border-radius: 2px;
+    max-width: 50%;
+    height: auto;
 }
 
 .slide-details {
@@ -24,7 +26,7 @@
     white-space: pre-wrap;
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 1500px) {
     .left {
         flex-direction: column;
     }
