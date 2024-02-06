@@ -43,7 +43,7 @@ const Gallery: React.FC = () => {
   useEffect(() => {
     fetchGalleryData()
       .then(() => {
-        setSizeCheck(5);
+        setSizeCheck(10);
       });
   }, []);
 

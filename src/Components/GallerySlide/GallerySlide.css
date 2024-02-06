@@ -27,6 +27,11 @@
 }
 
 @media screen and (max-width: 1500px) {
+    .slide-image {
+        max-width: 90%;
+        margin-bottom: 0;
+    }
+
     .left {
         flex-direction: column;
     }

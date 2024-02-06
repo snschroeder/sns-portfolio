@@ -16,3 +16,9 @@ select {
   margin-bottom: 5px;
   border-radius: 2px;
 }
+
+@media screen and (max-width: 1500px) {
+  .viz-container {
+    margin-bottom: 0;
+  }
+}

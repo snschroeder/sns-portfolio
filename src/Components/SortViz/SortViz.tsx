@@ -62,7 +62,7 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
     const w = dims.w;
     setDimensions({ hSize: h, wSize: w });
 
-    genRandomizedArr(120, 400);
+    genRandomizedArr(160, 400);
   }, []);
 
   const swap = (arr: number[], i: number, j: number) => {
