@@ -46,6 +46,15 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
   //   return { h, w };
   // };
 
+  const setSizing = () => {
+    const elem = document.getElementById('sort-viz-container');
+    const rect = elem?.getBoundingClientRect();
+
+    if (rect) {
+      console.log(rect);
+    }
+  };
+
   const genRandomizedArr = (numVals: number, maxVal: number) => {
     let random = new Array<number>();
     sort.length = 0;
@@ -64,6 +73,7 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
     // const w = dims.w;
     // setDimensions({ hSize: h, wSize: w });
 
+    setSizing();
     genRandomizedArr(160, 400);
   }, []);
 
@@ -246,13 +256,13 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
   };
 
   return (
-    <div className="sort-viz-container">
-      <section className="button-group">
+    <div className="sort-viz-container" id="sort-viz-container">
+      <div className="button-group">
         <button type="button" className="sort-viz-button" onClick={() => handleGenerateClick()}>Generate new array</button>
         <button type="button" className="sort-viz-button" onClick={() => animate()}>Animate!</button>
         <button type="button" className="sort-viz-button" onClick={() => animateReverse()}>Undo!</button>
-      </section>
-      <section className="vizDisplay" id="viz">
+      </div>
+      <div className="vizDisplay" id="viz">
         <ul className="display-nums">
           {randomizedArr.map((val, index) => (
             <Bar
@@ -265,7 +275,7 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
           ))
           }
         </ul>
-      </section>
+      </div>
     </div>
   );
 }

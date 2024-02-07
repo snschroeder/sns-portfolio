@@ -1,12 +1,9 @@
 .sort-viz-container {
   margin: 1em;
   min-width: 40%;
+  display: flex;
+  flex-direction: column;
 }
-
-.vizDisplay {
-    text-align: center;
-    margin: 0 auto;
-  }
   
   .button-group {
     text-align: center;
