@@ -3,14 +3,11 @@
     margin: 0 auto;
     padding-top: 2em;
     padding-bottom: 0.5em;
-    align-self: flex-end;
 }
 
 .footer-copyright {
     display: flex;
-    width: 15%;
-    margin: 0 auto;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
