@@ -164,16 +164,22 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
   const sortData = () => {
     let sorted = new Array<number>();
     setSortOrder([]);
-    if (sortType === 'quick-sort') {
-      sorted = quickSort([...randomizedArr]);
-    } else if (sortType === 'bubble-sort') {
-      sorted = bubbleSort([...randomizedArr]);
-    } else if (sortType === 'comb-sort') {
-      sorted = combSort([...randomizedArr]);
-    } else if (sortType === 'selection-sort') {
-      sorted = selectionSort([...randomizedArr]);
-    } else if (sortType === 'insertion-sort') {
-      sorted = insertionSort([...randomizedArr]);
+
+    switch (sortType) {
+      case 'quick-sort':
+        sorted = quickSort([...randomizedArr]);
+        break;
+      case 'bubble-sort':
+        sorted = bubbleSort([...randomizedArr]);
+        break;
+      case 'comb-sort': 
+        sorted = combSort([...randomizedArr]);
+        break;
+      case 'selection-sort':
+        sorted = selectionSort([...randomizedArr]);
+        break;
+      case 'insertion-sort':
+        sorted = insertionSort([...randomizedArr]);
     }
     setSortedArr(sorted);
   };
