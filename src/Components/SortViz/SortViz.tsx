@@ -10,48 +10,32 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
 
   const [sortedArr, setSortedArr] = useState(Array<number>);
   const [randomizedArr, setRandomizedArr] = useState(Array<number>);
-
   const [pieceOne, setPieceOne] = useState(-1);
   const [pieceTwo, setPieceTwo] = useState(-1);
-
   const [sortOrder, setSortOrder] = useState(Array<number>);
-
   const [isAnimating, setIsAnimating] = useState(false);
-
-  const [dimensions, setDimensions] = useState({
-    hSize: 3,
-    wSize: 1,
-  });
+  const [barWidthMulti, setBarWidthMulti] = useState(1);
 
   let sort = new Array<number>();
 
-  // const determineScaling = (height: number, width: number) => {
-  //   let h = dimensions.hSize;
-  //   let w = dimensions.wSize;
-  //   if (height <= 900) {
-  //     h = 1;
-  //   }
-  //   if (width <= 500) {
-  //     w = .6;
-  //   }
-  //   if (width > 500 && width <= 1000) {
-  //     w = 1;
-  //   }
-  //   if (width > 1000 && width <= 1800) {
-  //     w = 2.2;
-  //   }
-  //   if (width > 1800) {
-  //     w = 3.5;
-  //   }
-  //   return { h, w };
-  // };
 
   const setSizing = () => {
     const elem = document.getElementById('sort-viz-container');
     const rect = elem?.getBoundingClientRect();
 
     if (rect) {
-      console.log(rect);
+      const width = rect.width;
+      let newWidthMutli: number;
+
+      if (width <= 800) {
+        newWidthMutli = 1;
+      } else if (width > 800 && width <= 1600) {
+        newWidthMutli = 2;
+      } else {
+        newWidthMutli = 3;
+      }
+      console.log(newWidthMutli);
+      setBarWidthMulti(newWidthMutli);
     }
   };
 
@@ -66,15 +50,10 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
   };
 
   useEffect(() => {
-    // let height = 800;
-    // let width = 800;
-    // const dims = determineScaling(height, width);
-    // const h = dims.h;
-    // const w = dims.w;
-    // setDimensions({ hSize: h, wSize: w });
-
     setSizing();
     genRandomizedArr(160, 400);
+    window.addEventListener('resize', setSizing);
+    return () => window.removeEventListener('resize', setSizing);
   }, []);
 
   const swap = (arr: number[], i: number, j: number) => {
@@ -268,8 +247,8 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
             <Bar
               key={index}
               length={val}
-              hSize={dimensions.hSize}
-              wSize={dimensions.wSize}
+              hSize={3}
+              wSize={barWidthMulti}
               selected={index === pieceOne || index === pieceTwo ? 'selected' : 'not-selected'}
             />
           ))
