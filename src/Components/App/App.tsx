@@ -5,6 +5,8 @@ import ParticleCanvas from '../ParticleCanvas/ParticleCanvas';
 import Menu from '../Menu/Menu';
 import Footer from '../Footer/Footer';
 
+import { throttle } from '../../Utilities/throttle';
+
 import './App.css';
 
 interface AppOutletContext {
@@ -33,6 +35,8 @@ export default function App() {
   const appContainerRef: React.Ref<any> = useRef();
 
   const setDimensions = () => {
+    setScrollHeight(appContainerRef.current.scrollHeight);
+    setSizeCheck(5);
     const pageWidth = innerWidth;
     let pageHeight = innerHeight;
 
@@ -43,7 +47,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    addEventListener('resize', setDimensions);
+    addEventListener('resize', throttle(setDimensions, 750));
   }, []);
 
   useEffect(() => {

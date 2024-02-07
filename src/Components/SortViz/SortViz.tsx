@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Bar from './Bar/Bar';
+import { throttle } from '../../Utilities/throttle';
 import './SortViz.css';
 
 interface Props {
@@ -52,7 +53,7 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
   useEffect(() => {
     setSizing();
     genRandomizedArr(160, 400);
-    window.addEventListener('resize', setSizing);
+    window.addEventListener('resize', throttle(setSizing, 500));
     return () => window.removeEventListener('resize', setSizing);
   }, []);
 
