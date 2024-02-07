@@ -60,11 +60,15 @@ It was also imperative that the API handle a high static load from the thousands
       title: 'Sort Viz',
       imgLink: 'sort-viz',
       tagline: 'Building a path to understanding',
-      description: `This application is here primarily because it sheds light on who I am as a developer. Plus it's pretty to watch.
+      description: `This application is here primarily because it sheds light on who I am as a developer. 
+      
+Plus it's pretty to watch.
 
 It's a simple app built in a weekend that uses React to animate several different sorting algorithms, built for the sole sake of learning how to animate something with React without using any libraries.
       
-The solution ended up being straightforward, though still quite satisfying to implement. To do this, the sequence of moves a sort would make was determined and recorded. Then, using setTimeout and updating the state of the randomized array the sequence could be played out.
+The solution ended up being straightforward, though still quite satisfying to implement. To do this, the sequence of moves a sort would make was determined and recorded. Then, using setTimeout and updating the state of the randomized array the sequence could be played out. 
+
+Note, though, that the animation displays only the characteristics of the sort, not it's realtime speed. Selection sort appears the fastest in the animations, though it is of course massively inferior to quick sort in the real world.
 
 At this point my original mission statement to animate something using only React was done, but I wasn't. I added an undo option to animate the sequence in reverse. I added handling for screen resizing, and I learned the importance of adding debounce when doing that resizing.
       
