@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding-top: 2em;
     padding-bottom: 0.5em;
+    align-self: flex-end;
 }
 
 .footer-copyright {

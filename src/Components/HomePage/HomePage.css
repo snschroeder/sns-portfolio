@@ -1,9 +1,6 @@
 .home-container {
     width: 60%;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .home-h1 {

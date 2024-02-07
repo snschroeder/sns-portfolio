@@ -6,12 +6,12 @@ import './Footer.css';
 
 const Footer: React.FC = () => {
   return (
-    <section className="footer-container">
-        <section className="footer-copyright">
-            <FontAwesomeIcon icon={faCopyright} />
-            <p> Scott Schroeder</p>
-        </section>
-    </section>
+    <div className="footer-container">
+        <div className="footer-copyright">
+          <FontAwesomeIcon icon={faCopyright} />
+          <p> Scott Schroeder</p>
+        </div>
+    </div>
   );
 };
 

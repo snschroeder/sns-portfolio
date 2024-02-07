@@ -1,5 +1,5 @@
 .menu-container {
-    padding-top: 2em;
+    padding-top: 1.5em;
 }
 
 .menu {
@@ -20,4 +20,10 @@
     color: #001861;
     font-size: 1.2em;
     font-weight: 700;
+}
+
+@media screen and (max-width: 750px) {
+    .menu-container {
+        padding-top: 0.5em;
+    }
 }

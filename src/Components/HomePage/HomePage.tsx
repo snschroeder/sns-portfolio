@@ -44,15 +44,13 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <section className="home-container" >
+    <div className="home-container" >
       <h1 className="home-h1">{homePageContent.homePageHeader}</h1>
       <h2 className="home-h2">{homePageContent.homePageCta}</h2>
       <h2 className="home-h2-dust">{homePageContent.homePageDust}</h2>
       <h3 className="home-h3">{homePageContent.homePageDustJoke}</h3>
-      <SocialLinks 
-        isAnimated={true}
-      />
-  </section>
+      <SocialLinks isAnimated={true} />
+  </div>
   );
 };
 
