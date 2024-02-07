@@ -1,6 +1,7 @@
 .home-container {
     width: 60%;
     margin: 0 auto;
+    flex-grow: 2;
 }
 
 .home-h1 {
