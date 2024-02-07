@@ -239,11 +239,18 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
     }
   };
 
+  const handleGenerateClick = () => {
+    if (! isAnimating) {
+      genRandomizedArr(160, 400);
+    }
+  };
+
   return (
     <div className="sort-viz-container">
       <section className="button-group">
-        <button type="button" className="animate" onClick={() => animate()}>Animate!</button>
-        <button type="button" className="animate-reverse" onClick={() => animateReverse()}>Undo!</button>
+        <button type="button" className="sort-viz-button" onClick={() => handleGenerateClick()}>Generate new array</button>
+        <button type="button" className="sort-viz-button" onClick={() => animate()}>Animate!</button>
+        <button type="button" className="sort-viz-button" onClick={() => animateReverse()}>Undo!</button>
       </section>
       <section className="vizDisplay" id="viz">
         <ul className="display-nums">
