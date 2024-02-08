@@ -9,7 +9,6 @@ import config from '../../config';
 
 import './HomePage.css';
 
-
 interface HomePageContent {
   homePageHeader: string;
   homePageCta: string;
@@ -37,10 +36,8 @@ const HomePage: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchHomePageContent()
-      .then(() => {
-        setSizeCheck(5);
-      });
+    setSizeCheck(5);
+    fetchHomePageContent();
   }, []);
 
   return (

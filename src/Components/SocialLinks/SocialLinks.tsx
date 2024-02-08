@@ -9,7 +9,6 @@ import ContentApiService from '../../APIs/ContentApi/ContentApi';
 
 import './SocialLinks.css';
 
-
 interface Props {
   isAnimated: boolean;
 }
@@ -37,7 +36,7 @@ const SocialLinks: React.FC<Props> = ({ isAnimated }: Props) => {
     : 'social-link-container';
 
   return (
-    <section className={containerClass}>
+    <div className={containerClass}>
       <a href="https://www.linkedin.com/in/scott-schroeder/" target="_blank" rel="noreferrer noopener">
         <FontAwesomeIcon icon={faLinkedin} />
       </a>
@@ -50,7 +49,7 @@ const SocialLinks: React.FC<Props> = ({ isAnimated }: Props) => {
       <a href={resumeLink} target="_blank" rel="noreferrer noopener">
         <FontAwesomeIcon icon={faFile} />
       </a>
-    </section>
+    </div>
   );
 };
 

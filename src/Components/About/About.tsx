@@ -38,10 +38,8 @@ const About: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchAboutData()
-      .then(() => {
-        setSizeCheck(5);
-      });
+    setSizeCheck(8);
+    fetchAboutData();
   }, []);
 
   return (

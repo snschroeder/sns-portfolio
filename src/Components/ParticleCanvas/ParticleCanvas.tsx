@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Particle from './Particle';
+import {
+  getRandomInt,
+  getRandomIntWithinRange,
+  getRandomDecimalWithinRange,
+  applySign,
+} from '../../Utilities/rng';
+
 import './ParticleCanvas.css';
 
 interface Props {
@@ -13,34 +20,6 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
   const canvasRef: React.Ref<any> = useRef();
   let animationFrame;
 
-  // Get a random integer between 0 and max, exclusive
-  const getRandomInt = (max: number): number => {
-    return Math.floor(Math.random() * max);
-  };
-
-  // Get a random integer between min and max
-  // min is inclusive
-  // max is exclusive
-  const getRandomIntWithinRange = (min: number, max: number): number => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min);
-  };
-
-  // Get a random decimal between min and max
-  // min is inclusive
-  // max is exclusive
-  const getRandomDecimalWithinRange = (min: number, max: number): number => {
-    return Math.random() * (max - min) + min;    
-  };
-
-  // Randomly make a number either positive or negative
-  const applySign = (val: number): number => {
-    const direction = getRandomInt(2);
-
-    return direction === 0 ? val : -val;
-  };
-
   const setupCanvas = () => {
     const ctx = canvasRef.current.getContext('2d');
     ctx.canvas.height = windowX;
@@ -53,7 +32,6 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
 
   const generateParticleField = (amount: number) => {
     const ctx = setupCanvas();
-
     let particles = new Array<Particle>(amount);
 
     for (let i = 0; i < amount; i += 1) {
@@ -66,7 +44,6 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
         ctx,
       );
     }
-
     setParticleArray([...particles]);
   };
 
@@ -93,14 +70,14 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
 
   return (
     <section className="particle-container">
-        <canvas
-          className="particle-canvas"
-          id="particle-canvas"
-          ref={canvasRef}
-          width={windowX}
-          height={windowY}
-        >
-        </canvas>
+      <canvas
+        className="particle-canvas"
+        id="particle-canvas"
+        ref={canvasRef}
+        width={windowX}
+        height={windowY}
+      >
+      </canvas>
     </section>
   );
 };

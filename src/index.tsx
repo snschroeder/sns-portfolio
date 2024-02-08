@@ -11,7 +11,6 @@ import About from './Components/About/About';
 import HomePage from './Components/HomePage/HomePage';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 
-
 import './index.css';
 
 const router = createBrowserRouter([

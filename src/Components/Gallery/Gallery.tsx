@@ -7,7 +7,6 @@ import { useSetSizeCheck } from '../App/App';
 
 import config from '../../config';
 
-
 import './Gallery.css';
 
 interface GalleryItem {
@@ -21,7 +20,6 @@ interface GalleryItem {
 const Gallery: React.FC = () => {
   const [galleryContent, setGalleryContent] = useState(new Array<GalleryItem>);
   const { setSizeCheck } = useSetSizeCheck();
-
 
   const fetchGalleryData = async () => {
     if (!config.API_ENDPOINT) {
@@ -41,14 +39,12 @@ const Gallery: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchGalleryData()
-      .then(() => {
-        setSizeCheck(10);
-      });
+    setSizeCheck(5);
+    fetchGalleryData();
   }, []);
 
   return (
-    <section className="gallery-container">
+    <div className="gallery-container">
       {galleryContent.map((galleryItem: GalleryItem, index: number) => (
         <GallerySlide
           key={index}
@@ -60,7 +56,7 @@ const Gallery: React.FC = () => {
           techStack={`${galleryItem.techStack}`}
         />
       ))}
-    </section>
+    </div>
   );
 };
 

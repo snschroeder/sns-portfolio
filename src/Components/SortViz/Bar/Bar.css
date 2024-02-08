@@ -1,16 +1,16 @@
 .not-selected {
-    list-style-type: none;
-    background: grey;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 1px;
-  }
+  list-style-type: none;
+  background: grey;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1px;
+}
   
-  .selected {
-    list-style-type: none;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 1px;
-    background: greenyellow;
-  }
+.selected {
+  list-style-type: none;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1px;
+  background: greenyellow;
+}
   

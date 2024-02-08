@@ -73,7 +73,7 @@ Note, though, that the animation displays only the characteristics of the sort, 
 At this point my original mission statement to animate something using only React was done, but I wasn't. I added an undo option to animate the sequence in reverse. I added handling for screen resizing, and I learned the importance of adding debounce when doing that resizing.
       
 This, I feel, sums me up well as a developer - I love tackling interesting problems, pushing my own limits. However, even when building something for just myself accessibility and the user experience are core to my approach.
-      `,
+`,
       techStack: 'React, JavaScript',
     },
   ],

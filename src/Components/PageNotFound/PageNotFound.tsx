@@ -11,9 +11,7 @@ const PageNotFound: React.FC = () => {
     <section className="page-not-found-container">
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-          <i>{error.statusText || error.message}</i>
-      </p>
+      <p>Please refresh the page.</p>
     </section>
   );
 };
