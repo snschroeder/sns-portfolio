@@ -27,3 +27,12 @@
         width: 96%;
     }
 }
+
+@media screen and (min-width: 2400px) {
+    .about-image {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+}
+
+
