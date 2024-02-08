@@ -18,13 +18,26 @@
     height: auto;
 }
 
+.slide-title {
+    
+}
+
+.slide-tagline {
+    font-style: italic;
+    padding-bottom: 1em;
+}
+
 .slide-details {
     margin: 1em;
 }
 
 .slide-description {
     white-space: pre-wrap;
+    width: 92%;
+    margin: 0 auto;
 }
+
+
 
 @media screen and (max-width: 1500px) {
     .slide-image {

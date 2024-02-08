@@ -7,21 +7,21 @@ const defaultContent = {
   },
 
   defaultAbout: {
-    imgLink: `${process.env.PUBLIC_URL}/climbing.jpg`,
+    imgLink: `${process.env.PUBLIC_URL}/profile-pic-climbing.jpg`,
     header: 'About me',
-    body: `I have been working professionally as a full stack developer since 2019, with a focus on React, TypeScript, Node.js, Express.js, and both PostgreSQL and MySQL. 
+    body: `I have been working professionally as a full stack developer since 2019, with a focus on React, TypeScript, Node.js, Express.js, and both PostgreSQL and MySQL. I'm also experienced with AWS, Wordpress and PHP, and Shopify and Liquid.
     
-Most recently at PS Audio, I had many opportunities unique to a small company. I was often responsible for owning the entirety of projects I worked rather than just a portion of it. It was up to me to meet with stakeholders, define the requirements for the project, and determine the right tech stack and tools for the job. 
+Most recently at PS Audio, I had many opportunities unique to a small company. I was often responsible for owning the entirety of projects I worked. It was up to me to meet with stakeholders, define the requirements for the project, and determine the right tech stack and tools for the job. 
     
-Plus, I got to write so much code.
+Plus, I got to write a LOT of code.
     
 The projects I worked fulfilled several important roles, ranging from driving sales to improving product reliability and connecting users and our engineering team to diagnostics and product data. 
     
-PS Audio also gave me the chance to expand my knowledge base rapidly. Initially, this meant learning WooCommerce and PHP, which I used to create a subscription app for PS Audio’s recording studio Octave Records. Later, we moved the site to Shopify, giving me the chance to pick up both Shopify and Liquid.
+PS Audio also gave me the chance to expand my knowledge base rapidly. Initially, this meant learning WooCommerce and PHP, which I used to create a subscription app for PS Audio’s recording studio Octave Records. Later, we moved our e-commerce site to Shopify, giving me the chance to pick up both Shopify and Liquid.
     
 Prior to working at PS Audio, I attended Thinkful’s full time coding boot camp, working closely with peers and mentors to to learn modern best practices for developing with React, Node, and JavaScript.
     
-In my free time, you’ll likely find me learning Godot, hiking with my dog, gaming, or reading.`,
+In my free time, you’ll likely find me learning Godot, hiking with my dog, reading, or gaming.`,
     currentlyReading: 'Hyperion by Dan Simmons',
     currentlyPlaying: ['Path of Exile', 'Bloodstained: Ritual of the Night', 'Palworld'],
   },
@@ -33,17 +33,17 @@ In my free time, you’ll likely find me learning Godot, hiking with my dog, gam
       tagline: 'The final gatekeeper certifying each and every PowerPlant produced',
       description: `In the realm of high-end audio, power matters - so much so that some people install dedicated power lines just for their stereos.
 
-At PS Audio, we had a different approach - rebuild the sine wave right when we needed it using our PowerPlants. The Burn-in system was our final system test for each and every Power Plant produced at PS Audio. 
+At PS Audio, we had a different approach - rebuild the sine wave right when we needed it using our PowerPlants. The Burn-in system I created was our final system test for each and every Power Plant produced at PS Audio. 
       
-After the techs assembled each PowerPlant, the Burn-in system monitors each unit under load to certify it was ready before it left our warehouse. If a unit fails, detailed troubleshooting steps are provided with details on the failure and fix. 
+After the techs assemble each PowerPlant, the Burn-in system monitors each unit under load to certify it was ready before it left our warehouse. If a unit fails, detailed troubleshooting steps are provided covering the failure and necessary fix. 
       
-And for our engineering team, detailed diagnostics were provided from each test in an Excel format so that our Manufacturing Engineer could monitor the efficiency of our production and make adjustments to the testing parameters if needed.
-      `,
+And for our engineering team, detailed diagnostics were provided from each test in an Excel format so that our Manufacturing Engineer could monitor the efficiency of our production process and make adjustments to the testing parameters if needed.
+`,
       techStack: 'React, TypeScript, PostgreSQL, Node.js, Express.js, JWT',
     },
     {
       title: 'PS Audio PowerPlay API',
-      imgLink: `${process.env.PUBLIC_URL}/PowerPlay-API.png`,
+      imgLink: `${process.env.PUBLIC_URL}/PowerPlayAPI.png`,
       tagline: 'Connecting users to their data',
       description: `PowerPlay is feature built-in to most Power Plants produced by PS Audio that allows them to report power data to our servers. One of the first projects for me at PS Audio was to build a new PowerPlay API to connect our users with their data. 
       
