@@ -6,6 +6,6 @@ This application is built using React and TypeScript and has been pre-wired up t
 
 ## Scripts
 
-`npm start` - starts a dev version of the site available at http://localhost:3000 
-`npm run build` - builds the app for deployment to production to the build folder
-`npm run eject` - This is a one-way operation - don't do this unless you already know what you're getting into.
+- `npm start` - starts a dev version of the site available at http://localhost:3000 
+- `npm run build` - builds the app for deployment to production to the build folder
+- `npm run eject` - This is a one-way operation - don't do this unless you already know what you're getting into.
