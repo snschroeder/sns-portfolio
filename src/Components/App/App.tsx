@@ -47,7 +47,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    addEventListener('resize', throttle(setDimensions, 750));
+    addEventListener('resize', throttle(setDimensions, 500));
   }, []);
 
   useEffect(() => {

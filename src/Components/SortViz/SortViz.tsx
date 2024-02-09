@@ -35,7 +35,6 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
       } else {
         newWidthMutli = 3;
       }
-      console.log(newWidthMutli);
       setBarWidthMulti(newWidthMutli);
     }
   };

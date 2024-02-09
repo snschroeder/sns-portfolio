@@ -20,9 +20,40 @@ const HomePage: React.FC = () => {
   const [homePageContent, setHomePageContent] = useState({} as HomePageContent);
   const { setSizeCheck } = useSetSizeCheck();
 
+
+  const setVisitMemory = () => {
+    let val = sessionStorage.getItem('visitCount');
+    if (!val) {
+      sessionStorage.setItem('visitCount', '1');
+    } else {
+      let updatedVal: number = +val + 1;
+      sessionStorage.setItem('visitCount', `${updatedVal}`);
+    }
+  };
+
+  const pickAndSetDefaultContent = () => {
+    const val = sessionStorage.getItem('visitCount');
+    const defaultHomePageContent = defaultContent.defaultHomePageContent;
+    if (!val) {
+      setHomePageContent({
+        homePageHeader: defaultHomePageContent.homePageHeader,
+        homePageCta: defaultHomePageContent.homePageCta,
+        homePageDust: defaultHomePageContent.homePageDust,
+        homePageDustJoke: defaultHomePageContent.homePageDustJoke,
+      });
+    } else {
+      setHomePageContent({
+        homePageHeader: defaultHomePageContent.homePageHeader2,
+        homePageCta: defaultHomePageContent.homePageCta2,
+        homePageDust: defaultHomePageContent.homePageDust2,
+        homePageDustJoke: defaultHomePageContent.homePageDustJoke2,
+      });
+    }
+  };
+
   const fetchHomePageContent = async () => {
     if (!config.API_ENDPOINT) {
-      setHomePageContent(defaultContent.defaultHomePageContent);
+      pickAndSetDefaultContent();
     } else {
       try {
         await ContentApiService.getHomePageContent()
@@ -30,14 +61,15 @@ const HomePage: React.FC = () => {
             setHomePageContent(res);
           });
       } catch (error) {
-        setHomePageContent(defaultContent.defaultHomePageContent);
+        pickAndSetDefaultContent();
       }
     }
   };
 
   useEffect(() => {
-    setSizeCheck(5);
+    setSizeCheck(8);
     fetchHomePageContent();
+    setVisitMemory();
   }, []);
 
   return (
