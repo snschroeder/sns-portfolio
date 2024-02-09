@@ -12,9 +12,10 @@ import './ParticleCanvas.css';
 interface Props {
   windowX: number;
   windowY: number;
+  zIndex: number;
 }
 
-const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
+const ParticleCanvas: React.FC<Props> = ({ windowX, windowY, zIndex }: Props) => {
   const [particleArray, setParticleArray] = useState(new Array<Particle>);
 
   const canvasRef: React.Ref<any> = useRef();
@@ -68,8 +69,12 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
     generateParticleField(50);
   }, [windowX, windowY]);
 
+  const style = {
+    zIndex,
+  };
+
   return (
-    <section className="particle-container">
+    <div className="particle-container" style={ style }>
       <canvas
         className="particle-canvas"
         id="particle-canvas"
@@ -78,7 +83,7 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY }: Props) => {
         height={windowY}
       >
       </canvas>
-    </section>
+    </div>
   );
 };
 

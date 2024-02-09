@@ -60,7 +60,11 @@ export default function App() {
 
   return (
     <div className="app-container" id="app-container" ref={appContainerRef}>
-      <ParticleCanvas windowX={pageDimensions.pageWidth} windowY={pageDimensions.pageHeight} />
+      <ParticleCanvas
+        windowX={pageDimensions.pageWidth}
+        windowY={pageDimensions.pageHeight} 
+        zIndex={-1}
+      />
       <Menu />
       <Outlet context={{ setSizeCheck }}/>
       <Footer />
