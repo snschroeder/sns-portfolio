@@ -5,23 +5,27 @@ export default function ContactForm() {
   const [nameInput, setNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [inquiryInput, setInquiryInput] = useState('');
+  
   const handleSubmit = (e: any) => {
 
   };
-  const handleNameInputChange = (e: any) => {
-
+  const handleNameInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNameInput(e.target.value);
   };
 
-  const handleEmailInputChange = (e: any) => {
-
+  const handleEmailInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmailInput(e.target.value);
   };
 
-  const handleInquiryInputChange = (e: any) => {
-
+  const handleInquiryInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInquiryInput(e.target.value);
   };
 
   return (
     <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
+      <h3 className="contact h3">
+        Have a question for me or want to get in touch?
+      </h3>
       <label htmlFor="name-input">
         Name: 
       </label>
@@ -56,6 +60,9 @@ export default function ContactForm() {
         rows={4}
         cols={100}
       />
+      <button type="submit" className="contact button">
+        Submit
+      </button>
     </form>
   );
 }

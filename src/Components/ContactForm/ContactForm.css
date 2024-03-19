@@ -1,0 +1,27 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.h3 {
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #001861;
+  border-radius: 2px;
+  background-color: #eeeeee3a;
+}
+
+.button {
+  color: #001861;
+  border: 1px solid #001861;
+  border-radius: 2px;
+  background-color: #eeeeee3a;
+  width: 20%;
+  margin: 1em auto;
+  font-weight: 700;
+}

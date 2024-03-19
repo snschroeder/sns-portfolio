@@ -3,6 +3,7 @@ import { Outlet, useOutletContext } from 'react-router-dom';
 
 import ParticleCanvas from '../ParticleCanvas/ParticleCanvas';
 import Menu from '../Menu/Menu';
+import ContactForm from '../ContactForm/ContactForm';
 import Footer from '../Footer/Footer';
 
 import { throttle } from '../../Utilities/throttle';
@@ -67,6 +68,7 @@ export default function App() {
       />
       <Menu />
       <Outlet context={{ setSizeCheck }}/>
+      <ContactForm />
       <Footer />
     </div>
   );
