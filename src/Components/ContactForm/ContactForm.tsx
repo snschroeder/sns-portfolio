@@ -5,10 +5,11 @@ export default function ContactForm() {
   const [nameInput, setNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [inquiryInput, setInquiryInput] = useState('');
-  
+
   const handleSubmit = (e: any) => {
 
   };
+
   const handleNameInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNameInput(e.target.value);
   };
