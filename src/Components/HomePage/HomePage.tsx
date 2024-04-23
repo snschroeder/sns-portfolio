@@ -34,21 +34,21 @@ const HomePage: React.FC = () => {
   const pickAndSetDefaultContent = () => {
     const val = sessionStorage.getItem('visitCount');
     const defaultHomePageContent = defaultContent.defaultHomePageContent;
-    if (!val) {
-      setHomePageContent({
-        homePageHeader: defaultHomePageContent.homePageHeader,
-        homePageCta: defaultHomePageContent.homePageCta,
-        homePageDust: defaultHomePageContent.homePageDust,
-        homePageDustJoke: defaultHomePageContent.homePageDustJoke,
-      });
-    } else {
-      setHomePageContent({
-        homePageHeader: defaultHomePageContent.homePageHeader2,
-        homePageCta: defaultHomePageContent.homePageCta2,
-        homePageDust: defaultHomePageContent.homePageDust2,
-        homePageDustJoke: defaultHomePageContent.homePageDustJoke2,
-      });
-    }
+    // if (!val) {
+    setHomePageContent({
+      homePageHeader: defaultHomePageContent.homePageHeader,
+      homePageCta: defaultHomePageContent.homePageCta,
+      homePageDust: defaultHomePageContent.homePageDust,
+      homePageDustJoke: defaultHomePageContent.homePageDustJoke,
+    });
+    // } else {
+    //   setHomePageContent({
+    //     homePageHeader: defaultHomePageContent.homePageHeader2,
+    //     homePageCta: defaultHomePageContent.homePageCta2,
+    //     homePageDust: defaultHomePageContent.homePageDust2,
+    //     homePageDustJoke: defaultHomePageContent.homePageDustJoke2,
+    //   });
+    // }
   };
 
   const fetchHomePageContent = async () => {

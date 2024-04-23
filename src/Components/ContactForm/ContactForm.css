@@ -25,3 +25,14 @@
   margin: 1em auto;
   font-weight: 700;
 }
+
+.button:hover, .button:active, .button:focus {
+  color: #eee;
+  border: 1px solid #001861;
+  border-radius: 2px;
+  background-color: #001861;
+  width: 20%;
+  margin: 1em auto;
+  font-weight: 700;
+  transition: ease-in-out 0.3s;
+}

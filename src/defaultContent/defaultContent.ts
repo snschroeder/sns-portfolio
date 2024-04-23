@@ -1,10 +1,14 @@
 const defaultContent = {
   defaultHomePageContent: {
-    // Home Page default content on the first visit of the session
-    homePageHeader: 'Hi there! My name is Scott.',
-    homePageCta: 'Welcome to my portfolio. Please feel free to look around if you would like to see what I\'ve been working on.',
-    homePageDust: 'Oh, and please don\'t mind the dust, it seems I left a window open while I was away.',
-    homePageDustJoke: 'Don\'t worry, though! Our tests have confirmed it is 73% asbestos free!',
+    homePageHeader: 'An Exploration of Effort',
+    homePageCta: 'Welcome to my portfolio. My name is Scott - I\'m a Full Stack Developer.',
+    homePageDust: 'I\'ve been working professionally as a dev for multiple years and this portfolio highlights some of the more interesting or unique projects I\'ve headed.',
+    homePageDustJoke: 'If you have any questions or would like to collaborate on a project, please feel free to reach out.',
+    // Old home page content
+    homePageHeader3: 'Hi there! My name is Scott.',
+    homePageCta3: 'Welcome to my portfolio. Please feel free to look around if you would like to see what I\'ve been working on.',
+    homePageDust3: 'Oh, and please don\'t mind the dust, it seems I left a window open while I was away.',
+    homePageDustJoke3: 'Don\'t worry, though! Our tests have confirmed it is 73% asbestos free!',
     // Home Page default content on subsequent visits during the session
     homePageHeader2: 'Howdy, welcome back!',
     homePageCta2: 'You can check out the code for this portfolio along with my other projects in my Github linked below.',
