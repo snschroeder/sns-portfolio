@@ -1,8 +1,8 @@
 const defaultContent = {
   defaultHomePageContent: {
-    homePageHeader: 'An Exploration of Effort',
+    homePageHeader: 'Words about words that move machines',
     homePageCta: 'Welcome to my portfolio. My name is Scott - I\'m a Full Stack Developer.',
-    homePageDust: 'I\'ve been working professionally as a dev for multiple years and this portfolio highlights some of the more interesting or unique projects I\'ve headed.',
+    homePageDust: 'I\'ve been working professionally as a dev for multiple years and this portfolio highlights some of the more interesting or unique projects I\'ve worked. I work primarily with TypeScript, React, and Node.js.',
     homePageDustJoke: 'If you have any questions or would like to collaborate on a project, please feel free to reach out.',
     // Old home page content
     homePageHeader3: 'Hi there! My name is Scott.',
@@ -32,8 +32,8 @@ PS Audio also gave me the chance to expand my knowledge base rapidly. Initially,
 Prior to working at PS Audio, I attended Thinkful’s full time coding boot camp, working closely with peers and mentors to to learn modern best practices for developing with React, Node, and JavaScript.
     
 In my free time, you’ll likely find me learning Godot, hiking with my dog, reading, or gaming.`,
-    currentlyReading: 'Hyperion by Dan Simmons',
-    currentlyPlaying: ['Path of Exile', 'Bloodstained: Ritual of the Night', 'Palworld'],
+    currentlyReading: '',
+    currentlyPlaying: [],
   },
 
   defaultGallery: [
@@ -41,7 +41,7 @@ In my free time, you’ll likely find me learning Godot, hiking with my dog, rea
       title: 'PS Audio Burn-in',
       imgLink: `${process.env.PUBLIC_URL}/Burnin-monitor.png`,
       tagline: 'The final gatekeeper certifying each and every PowerPlant produced',
-      description: `In the realm of high-end audio, power matters - so much so that some people install dedicated power lines just for their stereos.
+      description: `In the realm of high-end audio, power matters - so much so that a select few enthusiasts install dedicated power lines just for their stereos.
 
 At PS Audio, we had a different approach - rebuild the sine wave right when we needed it using our PowerPlants. The Burn-in system I created was our final system test for each and every Power Plant produced at PS Audio. 
       
