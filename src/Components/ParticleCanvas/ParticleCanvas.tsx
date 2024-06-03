@@ -27,7 +27,7 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY, zIndex }: Props) =>
     ctx.canvas.height = windowY;
     ctx.fillStyle = '#eee';
     ctx.fillRect(0, 0, windowX, windowY);
-    ctx.fillStyle = 'rgba(223, 207, 137, 0.4)';
+    ctx.fillStyle = '#EFC6D9';
     return ctx;
   };
 
@@ -75,6 +75,7 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY, zIndex }: Props) =>
 
   return (
     <div className="particle-container" style={ style }>
+      <img src={`${process.env.PUBLIC_URL}/sakura-hero.jpg`} className="hero-img"/>
       <canvas
         className="particle-canvas"
         id="particle-canvas"
