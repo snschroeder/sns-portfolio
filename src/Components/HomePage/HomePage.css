@@ -1,49 +1,19 @@
 .home-container {
-    width: 60%;
-    margin: 0 auto;
-    flex-grow: 2;
+    width: 35%;
+    justify-content: flex-start;
+    margin: 2em 2em 2em 10em;
 }
 
 .home-h1 {
     font-size: 2.5em;
-    /* opacity: 0;
-    animation-name: fade-in;
-    animation-duration: 2s;
-    animation-delay: 0.1s;
-    animation-direction: normal;
-    animation-fill-mode: forwards; */
 }
 
 .home-h2 {
+    font-size: 2em;
+}
+
+.home-h2-dust, .home-h3 {
     font-size: 1.5em;
-    /* opacity: 0;
-    animation-name: fade-in;
-    animation-duration: 2s;
-    animation-delay: 1.8s;
-    animation-fill-mode: forwards; */
-}
-
-.home-h2-dust {
-    font-size: 1.5em;
-    /* opacity: 0;
-    animation-name: fade-in;
-    animation-duration: 2s;
-    animation-delay: 4s;
-    animation-fill-mode: forwards; */
-}
-
-.home-h3 {
-    font-size: 1.2em;
-    /* opacity: 0;
-    animation-name: fade-in;
-    animation-duration: 2s;
-    animation-delay: 6s;
-    animation-fill-mode: forwards; */
-}
-
-@keyframes fade-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
 }
 
 @media screen and (max-width: 730px) {

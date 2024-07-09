@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Particle from './Particle';
+import Petal from './Petal';
 import {
   getRandomInt,
   getRandomIntWithinRange,
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const ParticleCanvas: React.FC<Props> = ({ windowX, windowY, zIndex }: Props) => {
-  const [particleArray, setParticleArray] = useState(new Array<Particle>);
+  const [particleArray, setParticleArray] = useState(new Array<Petal>);
 
   const canvasRef: React.Ref<any> = useRef();
   let animationFrame;
@@ -33,10 +33,10 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY, zIndex }: Props) =>
 
   const generateParticleField = (amount: number) => {
     const ctx = setupCanvas();
-    let particles = new Array<Particle>(amount);
+    let particles = new Array<Petal>(amount);
 
     for (let i = 0; i < amount; i += 1) {
-      particles[i] = new Particle(
+      particles[i] = new Petal(
         getRandomInt(windowX),
         getRandomInt(windowY),
         getRandomIntWithinRange(5, 15),
@@ -54,8 +54,8 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY, zIndex }: Props) =>
     animationFrame = requestAnimationFrame(animate);
 
     ctx.clearRect(0, 0, windowX, windowY);
-    particleArray.forEach((particle: Particle) => {
-      particle.floatAround();
+    particleArray.forEach((petal: Petal) => {
+      petal.floatOnTheWind();
     });
   };
 

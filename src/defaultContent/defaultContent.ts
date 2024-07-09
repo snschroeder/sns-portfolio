@@ -1,9 +1,9 @@
 const defaultContent = {
   defaultHomePageContent: {
-    homePageHeader: 'Words about words that move machines',
-    homePageCta: 'Welcome to my portfolio. My name is Scott - I\'m a Full Stack Developer.',
-    homePageDust: 'I\'ve been working professionally as a dev for multiple years and this portfolio highlights some of the more interesting or unique projects I\'ve worked. I work primarily with TypeScript, React, and Node.js.',
-    homePageDustJoke: 'If you have any questions or would like to collaborate on a project, please feel free to reach out.',
+    homePageHeader: 'Hi, I\'m Scott',
+    homePageCta: 'I\'m a Full Stack Developer',
+    homePageDust: 'I work most often with TypeScript, React, and Node.js. Please take a look around if you\'d like to learn more about my work.',
+    homePageDustJoke: 'If you have any questions or would like to collaborate on a project, let me know!',
     // Old home page content
     homePageHeader3: 'Hi there! My name is Scott.',
     homePageCta3: 'Welcome to my portfolio. Please feel free to look around if you would like to see what I\'ve been working on.',
