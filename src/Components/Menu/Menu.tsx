@@ -8,13 +8,13 @@ const Menu: React.FC = () => {
     <nav className="menu">
       <ul className="menu-list">
         <li>
-          <Link to={'/'}>Home</Link>
+          <Link to={'/'} id="home-link">Home</Link>
         </li>
         <li>
-          <Link to={'about'}>About</Link>
+          <Link to={'about'} id="about-link">About</Link>
         </li>
         <li>
-          <Link to={'gallery'}>Gallery</Link>
+          <Link to={'gallery'}  id="gallery-link">Gallery</Link>
         </li>
       </ul>
     </nav>
