@@ -1,35 +1,51 @@
+.hero-img {
+    position: absolute;
+    width: auto;
+    height: 100vh;
+    z-index: -1;
+    filter: blur(4px);
+}
+
 .home-container {
-    width: 35%;
-    justify-content: flex-start;
-    margin: 0 2em 2em 8em;
+    width: 94%;
+    margin: 0 auto;
 }
 
 .home-h1 {
-    font-size: 2.5em;
-}
-
-.home-h2 {
-    font-size: 2em;
-}
-
-.home-h2-dust, .home-h3 {
     font-size: 1.5em;
 }
 
-@media screen and (max-width: 730px) {
+.home-h2 {
+    font-size: 1.2em;
+}
+
+.home-h2-dust, .home-h3 {
+    font-size: 1em;
+}
+
+@media screen and (min-width: 500px) {
+    .hero-img {
+        position: absolute;
+        width: 100vw;
+        height: auto;
+        z-index: -1;
+    }
+
     .home-container {
-        width: 90%;
+        width: 35%;
+        justify-content: flex-start;
+        margin: 0 2em 2em 6em;
     }
-    
+
     .home-h1 {
-        font-size: 1.8em;
+        font-size: 2.5em;
     }
 
-    .home-h2, .home-h2-dust {
-        font-size: 1.2em;
+    .home-h2 {
+        font-size: 2em;
     }
 
-    .home-h3 {
-        font-size: 1em;
+    .home-h2-dust, .home-h3 {
+        font-size: 1.5em;
     }
 }

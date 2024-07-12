@@ -29,7 +29,7 @@ export default function Visualizer({ sortType = 'quick-sort' }: Props) {
       let newWidthMutli: number;
 
       if (width <= 800) {
-        newWidthMutli = 1;
+        newWidthMutli = 0.8;
       } else if (width > 800 && width <= 1600) {
         newWidthMutli = 2;
       } else {

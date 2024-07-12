@@ -5,10 +5,10 @@
   ) 100% 50% / 100% 100% repeat-x;
     -webkit-mask: var(--mask); 
     mask: var(--mask);
-    padding-top: 1em;
+    padding-top: 0.5em;
     width: 100%;
     height: 6em;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
 }
 
 .menu-list {
@@ -27,7 +27,7 @@
     text-decoration: underline;
     text-decoration-color: transparent;
     color: #000900;
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: 800;
     transition: text-decoration-color 0.3s ease-in-out;
     -webkit-text-decoration-color: transparent;
@@ -52,8 +52,6 @@
     text-decoration-color: #000900;
 }
 
-@media screen and (max-width: 750px) {
-    .menu-container {
-        padding-top: 0.5em;
-    }
+@media screen and (min-width: 500px) {
+
 }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
 import defaultContent from '../../defaultContent/defaultContent';
-import { useSetSizeCheck } from '../App/App';
 
 import config from '../../config';
 
@@ -18,7 +17,6 @@ interface AboutObject {
 
 const About: React.FC = () => {
   const [aboutContent, setAboutContent] = useState({} as AboutObject);
-  const { setSizeCheck } = useSetSizeCheck();
 
   const fetchAboutData = async () => {
     if (!config.API_ENDPOINT) {
@@ -38,7 +36,6 @@ const About: React.FC = () => {
   };
 
   useEffect(() => {
-    setSizeCheck(8);
     fetchAboutData();
   }, []);
 

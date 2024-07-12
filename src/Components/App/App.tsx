@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useReducer } from 'react';
 import { Outlet, useOutletContext } from 'react-router-dom';
 
 import ParticleCanvas from '../ParticleCanvas/ParticleCanvas';
@@ -11,68 +11,54 @@ import { throttle } from '../../Utilities/throttle';
 import './App.css';
 
 interface AppOutletContext {
-  setSizeCheck: (val: number) => void;
+  state: PageState;
 }
 
-interface PageDimensions {
+interface PageState {
   pageWidth: number;
   pageHeight: number;
 }
 
+type AppAction = {
+  type: 'resize';
+  payload: PageState;
+};
+
+function pageSizeReducer(state: PageState, action: AppAction) {
+  switch (action.type) {
+    case 'resize':
+      return { ...state, pageWidth: action.payload.pageWidth, pageHeight: action.payload.pageHeight };
+    default:
+      return state;
+  }
+}
+
 export default function App() {
-  const [pageDimensions, setPageDimensions] = useState({} as PageDimensions);
-  const [scrollHeight, setScrollHeight] = useState(0);
-  const [sizeCheck, setSizeCheck] = useState(5);
-  /**
-   * sizeCheck ensures the canvas always fills the full height of the screen
-   * Specifically, it allows components rendered in the React-Router-DOM Outlet 
-   * to correctly trigger the canvas resize.
-   * 
-   * Using a boolean instead fails as the resize finishes before the full scroll height is filled.
-   * 
-   * Testing confirmed that 3 sizeChecks was typically sufficient, 5 used for additional safety.
-   */
+  const [state, dispatch] = useReducer(pageSizeReducer, { pageWidth: innerWidth, pageHeight: innerHeight });
 
-  const appContainerRef: React.Ref<any> = useRef();
-
-  const setDimensions = () => {
-    setScrollHeight(appContainerRef.current.scrollHeight);
-    setSizeCheck(5);
-    const pageWidth = innerWidth;
-    let pageHeight = innerHeight;
-
-    if (scrollHeight > pageHeight) {
-      pageHeight = scrollHeight;
-    }
-    setPageDimensions({ pageWidth, pageHeight });
+  const resizeListener = () => {
+    const payload = { pageWidth: innerWidth, pageHeight: innerHeight };
+    dispatch({ type: 'resize', payload });
   };
 
   useEffect(() => {
-    addEventListener('resize', throttle(setDimensions, 500));
+    addEventListener('resize', resizeListener);
   }, []);
 
-  useEffect(() => {
-    if (sizeCheck > 0) {
-      setScrollHeight(appContainerRef.current.scrollHeight);
-      setDimensions();
-      setSizeCheck(sizeCheck - 1);
-    }
-  }, [scrollHeight, sizeCheck, pageDimensions]);
-
   return (
-    <div className="app-container" id="app-container" ref={appContainerRef}>
-      <ParticleCanvas
-        windowX={pageDimensions.pageWidth}
-        windowY={pageDimensions.pageHeight} 
+    <div className="app-container" id="app-container" >
+      {/* <ParticleCanvas
+        windowX={state.pageWidth}
+        windowY={state.pageHeight} 
         zIndex={-1}
-      />
+      /> */}
       <Menu />
-      <Outlet context={{ setSizeCheck }}/>
+      <Outlet context={{ state } satisfies AppOutletContext}/>
       <Footer />
     </div>
   );
 }
 
-export const useSetSizeCheck = () => {
+export function useAppState() {
   return useOutletContext<AppOutletContext>();
-};
+}

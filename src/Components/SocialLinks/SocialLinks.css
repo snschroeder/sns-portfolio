@@ -1,7 +1,7 @@
 .social-link-container {
     display: flex;
     justify-content: space-around;
-    margin-top: 2.5em;
+    margin-top: 1.5em;
     font-size: 1.5em;
 }
 
@@ -22,4 +22,8 @@
 @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@media screen and (min-width: 500px) {
+
 }

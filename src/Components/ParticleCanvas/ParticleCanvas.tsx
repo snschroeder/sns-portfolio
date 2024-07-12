@@ -75,7 +75,6 @@ const ParticleCanvas: React.FC<Props> = ({ windowX, windowY, zIndex }: Props) =>
 
   return (
     <div className="particle-container" style={ style }>
-      <img src={`${process.env.PUBLIC_URL}/sakura-hero.jpg`} className="hero-img"/>
       <canvas
         className="particle-canvas"
         id="particle-canvas"

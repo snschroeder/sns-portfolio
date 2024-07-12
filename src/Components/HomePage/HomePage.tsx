@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react';
 import SocialLinks from '../SocialLinks/SocialLinks';
 import defaultContent from '../../defaultContent/defaultContent';
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
-import { useSetSizeCheck } from '../App/App';
+
+import { useAppState } from '../App/App';
+
+import { throttle } from '../../Utilities/throttle';
 
 import config from '../../config';
 
@@ -18,21 +21,10 @@ interface HomePageContent {
 
 const HomePage: React.FC = () => {
   const [homePageContent, setHomePageContent] = useState({} as HomePageContent);
-  const { setSizeCheck } = useSetSizeCheck();
-
-
-  const setVisitMemory = () => {
-    let val = sessionStorage.getItem('visitCount');
-    if (!val) {
-      sessionStorage.setItem('visitCount', '1');
-    } else {
-      let updatedVal: number = +val + 1;
-      sessionStorage.setItem('visitCount', `${updatedVal}`);
-    }
-  };
+  const [heroImg, setHeroImg] = useState(`${process.env.PUBLIC_URL}/sakura-hero.jpg`);
+  const { state } = useAppState();
 
   const pickAndSetDefaultContent = () => {
-    const val = sessionStorage.getItem('visitCount');
     const defaultHomePageContent = defaultContent.defaultHomePageContent;
     // if (!val) {
     setHomePageContent({
@@ -67,19 +59,28 @@ const HomePage: React.FC = () => {
   };
 
   useEffect(() => {
-    setSizeCheck(8);
     fetchHomePageContent();
-    setVisitMemory();
   }, []);
 
+  useEffect(() => {
+    if (state.pageWidth < 1200) {
+      setHeroImg(`${process.env.PUBLIC_URL}/sakura-hero-mobile.jpg`);
+    } else if (state.pageWidth > 1200) {
+      setHeroImg(`${process.env.PUBLIC_URL}/sakura-hero.jpg`);
+    }
+  }, [state.pageWidth, state.pageHeight]);
+
   return (
-    <div className="home-container" >
-      <h1 className="home-h1">{homePageContent.homePageHeader}</h1>
-      <h2 className="home-h2">{homePageContent.homePageCta}</h2>
-      <h2 className="home-h2-dust">{homePageContent.homePageDust}</h2>
-      <h3 className="home-h3">{homePageContent.homePageDustJoke}</h3>
-      <SocialLinks isAnimated={false} />
-  </div>
+    <>
+      <img src={heroImg} className="hero-img"/>
+      <div className="home-container" >
+        <h1 className="home-h1">{homePageContent.homePageHeader}</h1>
+        <h2 className="home-h2">{homePageContent.homePageCta}</h2>
+        <h2 className="home-h2-dust">{homePageContent.homePageDust}</h2>
+        <h3 className="home-h3">{homePageContent.homePageDustJoke}</h3>
+        <SocialLinks isAnimated={false} />
+      </div>
+    </>
   );
 };
 

@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
 import defaultContent from '../../defaultContent/defaultContent';
 import GallerySlide from '../GallerySlide/GallerySlide';
-import { useSetSizeCheck } from '../App/App';
 
 import config from '../../config';
 
@@ -19,7 +18,6 @@ interface GalleryItem {
 
 const Gallery: React.FC = () => {
   const [galleryContent, setGalleryContent] = useState(new Array<GalleryItem>);
-  const { setSizeCheck } = useSetSizeCheck();
 
   const fetchGalleryData = async () => {
     if (!config.API_ENDPOINT) {
@@ -39,7 +37,6 @@ const Gallery: React.FC = () => {
   };
 
   useEffect(() => {
-    setSizeCheck(5);
     fetchGalleryData();
   }, []);
 
