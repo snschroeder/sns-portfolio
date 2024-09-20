@@ -1,0 +1,23 @@
+.home-h1,
+.home-h2,
+.home-h3 {
+    padding-bottom: 0.5em;
+}
+
+.home-h1 {
+    font-size: 3em;
+    width: 85%;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.home-h2 {
+    font-size: 1.8em;
+    width: 90%;
+    text-align: center;
+}
+
+.home-h3 {
+    width: 95%;
+    font-size: 1.3em;
+}

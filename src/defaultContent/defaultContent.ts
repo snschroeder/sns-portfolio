@@ -2,7 +2,7 @@ const defaultContent = {
   defaultHomePageContent: {
     homePageHeader: 'Hi, I\'m Scott',
     homePageCta: 'I\'m a Full Stack Developer',
-    homePageDust: 'I work most often with TypeScript, React, and Node.js. Please take a look around if you\'d like to learn more about my work.',
+    homePageDust: 'I specialize in TypeScript, React, and Node.js with years of experience',
     homePageDustJoke: 'If you have any questions or would like to collaborate on a project, let me know!',
     // Old home page content
     homePageHeader3: 'Hi there! My name is Scott.',

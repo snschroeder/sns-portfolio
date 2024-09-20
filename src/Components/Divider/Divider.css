@@ -1,0 +1,49 @@
+.divider {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  left: 45%;
+  top: 0;
+  width: 100px;
+  height: 100vh;
+  transform: skew(-20deg);
+  background: #FF973B;
+}
+
+.accent {
+  width: 60px;
+  margin: 0 auto;
+  background: #eee;
+  border-radius: 3px;
+}
+
+.alt {
+  background: #1D2336;
+}
+
+.small {
+  height: 20px;
+}
+
+.smedium {
+  height: 40px;
+}
+
+.medium {
+  height: 80px;
+}
+
+.marge {
+  height: 100px;
+}
+
+.large {
+  height: 120px;
+}
+
+.circle {
+  height: 60px;
+  border-radius: 100%;
+  transform: skew(20deg);
+}

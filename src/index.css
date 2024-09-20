@@ -1,19 +1,18 @@
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Jost', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #000900;
-  background-color: #eee;
+  color: #eee;
   font-size: 1.2em;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  color: #eee;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Andika', sans-serif;
-  /* color: #B0DFF7; */
+  font-family: 'Jost', sans-serif;
+  color: #eee;
 }
