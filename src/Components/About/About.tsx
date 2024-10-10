@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import Divider from '../Divider/Divider';
 import ContentApiService from '../../APIs/ContentApi/ContentApi';
 import defaultContent from '../../defaultContent/defaultContent';
 
@@ -40,28 +41,38 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <section className="about-container">
-      <img src={aboutContent.imgLink} className="about-image" />
-      <h3 className="about-header">{aboutContent.header}</h3>
-      <p className="about-body">{aboutContent.body}</p>
-      
-        {
-          aboutContent.currentlyReading && aboutContent.currentlyPlaying
-            ? <section className="currently-list">
-            <h4>Currrently reading: </h4>
-            <p>{aboutContent.currentlyReading}</p>
-            <h4>Currently playing: </h4>
-            {
-              aboutContent.currentlyPlaying 
-                ? aboutContent.currentlyPlaying.map((val, index: number) => (
-                  <p key={index}>{val}</p>
-                ))
-                : <></>
-            }
-            </section>
-            : <></>
-        }
-    </section>
+    <div className="about-container">
+      <div className="about-background"></div>
+      <Divider
+        angle='skew(-20deg)'
+        width='100px'
+        height='100vh'
+        top='0%'
+        left='45%'
+        flexDirection='column'
+        position='absolute'
+        accentAngle='skew(20deg)'
+      />
+      <h1 className="about-h1">What sets me apart</h1>
+      <div className="about-item">
+        <h2 className="about-header">Unparalleled Communication</h2>
+        <h3 className="about-content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut ipsum ac odio scelerisque sagittis at a nisi.
+        </h3>
+      </div>
+      <div className="about-item">
+        <h2 className="about-header">Unparalleled Communication</h2>
+        <h3 className="about-content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut ipsum ac odio scelerisque sagittis at a nisi.
+        </h3>
+      </div>
+      <div className="about-item">
+        <h2 className="about-header">Unparalleled Communication</h2>
+        <h3 className="about-content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut ipsum ac odio scelerisque sagittis at a nisi.
+        </h3>
+      </div>
+    </div>
   );
 };
 

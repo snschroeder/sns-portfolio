@@ -46,15 +46,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="app-container" id="app-container" >
-      {/* <ParticleCanvas
-        windowX={state.pageWidth}
-        windowY={state.pageHeight} 
-        zIndex={-1}
-      /> */}
+    <div className="app-container" id="app-container">
+      <img src={`${process.env.PUBLIC_URL}/skyline.jpg`} className="app-hero" />
       <Menu />
       <Outlet context={{ state } satisfies AppOutletContext}/>
-      <Footer />
     </div>
   );
 }

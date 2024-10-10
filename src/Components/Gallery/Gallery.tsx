@@ -41,19 +41,22 @@ const Gallery: React.FC = () => {
   }, []);
 
   return (
-    <div className="gallery-container">
-      {galleryContent.map((galleryItem: GalleryItem, index: number) => (
-        <GallerySlide
-          key={index}
-          isLeftSlide={index % 2 === 0}
-          title={`${galleryItem.title}`}
-          imgLink={`${galleryItem.imgLink}`}
-          tagline={`${galleryItem.tagline}`}
-          description={`${galleryItem.description}`}
-          techStack={`${galleryItem.techStack}`}
-        />
-      ))}
+    <div className="gallery-background">
+      <div className="gallery-container">
+        {galleryContent.map((galleryItem: GalleryItem, index: number) => (
+          <GallerySlide
+            key={index}
+            isLeftSlide={index % 2 === 0}
+            title={`${galleryItem.title}`}
+            imgLink={`${galleryItem.imgLink}`}
+            tagline={`${galleryItem.tagline}`}
+            description={`${galleryItem.description}`}
+            techStack={`${galleryItem.techStack}`}
+          />
+        ))}
+      </div>
     </div>
+
   );
 };
 

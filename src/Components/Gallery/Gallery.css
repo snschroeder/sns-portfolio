@@ -1,4 +1,17 @@
+.gallery-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(174deg, transparent 80%, #1D2336, #1D2336 20%);
+}
+
 .gallery-container {
-    width: 92%;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }

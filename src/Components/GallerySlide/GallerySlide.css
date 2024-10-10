@@ -3,12 +3,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 95%;
     min-height: 33vh;
     margin: 0 auto;
     margin-bottom: 1em;
-    background-color: #bebebe79;
+    background-color: #1D2336;
     border-radius: 1px;
+    margin: 3em 1em 1em 1em;
+
 }
 
 .slide-image {
@@ -35,7 +37,7 @@
 
 
 
-@media screen and (max-width: 1500px) {
+/* @media screen and (max-width: 1500px) {
     .slide-image {
         max-width: 90%;
         margin-bottom: 0;
@@ -48,4 +50,4 @@
     .right {
         flex-direction: column-reverse;
     }
-}
+} */

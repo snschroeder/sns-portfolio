@@ -1,38 +1,28 @@
 .about-container {
-    width: 80%;
-    margin: 0 auto;
+    width: 40%;
     display: flex;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: 1em;
+    margin-top: 2em;
     flex-direction: column;
 }
 
-.about-image {
-    min-width: 360px;
+.about-background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(110deg, transparent 50%, #1D2336 50%);
 }
 
 .about-header {
     align-self: center;
 }
 
-.currently-list {
-    text-align: center;
-}
-
 .about-body {
     white-space: pre-wrap;
 }
-
-@media screen and (max-width: 730px) {
-    .about-container {
-        width: 96%;
-    }
-}
-
-@media screen and (min-width: 2400px) {
-    .about-image {
-        max-width: 1800px;
-        margin: 0 auto;
-    }
-}
-
-
